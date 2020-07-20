@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>解决origin下载慢问题</title>
+    <url>/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="解决origin下载慢问题"><a href="#解决origin下载慢问题" class="headerlink" title="解决origin下载慢问题"></a>解决origin下载慢问题</h2><p>最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。</p>
+<h2 id="UsbEAm-hosts-Editor-v3-5"><a href="#UsbEAm-hosts-Editor-v3-5" class="headerlink" title="UsbEAm_hosts_Editor_v3.5"></a>UsbEAm_hosts_Editor_v3.5</h2><p><img src="/images/origin_speed/1.jpg" srcset="/img/loading.gif" alt="avatar"></p>
+<h2 id="可以直接测延迟然后选择"><a href="#可以直接测延迟然后选择" class="headerlink" title="可以直接测延迟然后选择"></a>可以直接测延迟然后选择</h2><p><img src="/images/origin_speed/2.jpg" srcset="/img/loading.gif" alt="avatar"><br>之后如果不想用的话可以直接恢复默认hosts；<br>工具直接去原文链接下载</p>
+<h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h3><p><a href="https://www.dogfight360.com/blog/" target="_blank" rel="noopener">原文</a></p>
+]]></content>
+      <tags>
+        <tag>Technology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>短学期计划</title>
+    <url>/2020/06/20/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92/</url>
+    <content><![CDATA[<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><ul>
+<li>python基础学习</li>
+<li>写博客</li>
+<li>python简单抓包（抓取某网站图片）</li>
+<li>python 对excel表格的处理</li>
+<li>python中药专利抓取</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>School</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macdock</title>
+    <url>/2020/05/04/macdock/</url>
+    <content><![CDATA[<h2 id="Mac设置启动台图标大小"><a href="#Mac设置启动台图标大小" class="headerlink" title="Mac设置启动台图标大小"></a>Mac设置启动台图标大小</h2><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/images/macdock.jpg" srcset="/img/loading.gif" alt="avatar"></p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>1:调整为一列10个
+defaults write com.apple.dock springboard-columns -int 10
+2:调整行
+defaults write com.apple.dock springboard-rows -int 8
+重置Launchpad
+defaults write com.apple.dock ResetLaunchPad -bool TRUE
+重启
+killall Dock</code></pre><h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><pre><code>defaults write com.apple.dock springboard-columns -int 10
+
+defaults write com.apple.dock springboard-rows -int 8
+
+defaults write com.apple.dock ResetLaunchPad -bool TRUE
+
+killall Dock
+</code></pre>]]></content>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何求解n个数的最小公倍数</title>
+    <url>/2020/02/16/thesma/</url>
+    <content><![CDATA[<h2 id="求解n个数字的最小公倍数"><a href="#求解n个数字的最小公倍数" class="headerlink" title="求解n个数字的最小公倍数"></a>求解n个数字的最小公倍数</h2><p>对于n个数字，可以先将这一串数字的初始值用数组存起来，然后复制一个数组。对于n个数字，每次找到最小的数，将最小的数字加上它的初始值，循环以上，直到所有的数字相等，就拿到了最小公倍数。</p>
+<h3 id="判断所有数字相等的方法"><a href="#判断所有数字相等的方法" class="headerlink" title="判断所有数字相等的方法"></a>判断所有数字相等的方法</h3><ol>
+<li>找出最大数与最小数，判断是否相等</li>
+<li>定义一个用于判断的变量，其初始值设为零。然后循环中判断相邻数之间是否相等，相等则将用于判断的变量加一，不等则跳出循环。最后判断用于判断的变量的值是否满足n-1；</li>
+<li>将数字排序后判断首和尾是否相等；</li>
+</ol>
+<h3 id="示例代码-c"><a href="#示例代码-c" class="headerlink" title="示例代码(c++)"></a>示例代码(c++)</h3><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    int num[10001];
+    int num_copy[10001];
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;num[i];
+        num_copy[i]=num[i];
+    }
+    int min=num[0];
+    int k=0;
+    int judge =0;
+    while(1){
+        judge=0;
+        k=0;
+        min=num[0];
+        for(int i=0;i&lt;n-1;i++){
+            if(num[i]==num[i+1]){
+                judge++;
+            }
+            else{
+                break;
+            }
+        }
+        if(judge==n-1){
+            cout&lt;&lt;num[0];
+            break;
+        }
+        else{
+
+            for(int i=1;i&lt;n;i++){
+                if(num[i]&lt;min){
+                    min=num[i];
+                    k=i;
+                }
+            }
+            num[k]+=num_copy[k];
+        }
+    }
+    return 0;
+}</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.matrix67.com/blog/archives/554" target="_blank" rel="noopener">不用除法，如何求解n个数的最小公倍数</a></p>
+]]></content>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>飞young电信校园网破解</title>
+    <url>/2019/10/06/dianxinxiaoyuanwang/</url>
+    <content><![CDATA[<h2 id="作者硬件-非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点"><a href="#作者硬件-非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点" class="headerlink" title="作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)"></a>作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)</h2><ul>
+<li>小米路由器4c</li>
+<li>一台电脑，用于路由器管理界面的登录</li>
+<li>手机一部，用于拨号<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2>路由器需支持mac地址克隆功能。如果你有两台路由器那操作方法会大大简化。不必一定自己有两台，如果你室友有或者隔壁室友有就可以。<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2></li>
+</ul>
+<p>1：运营商是根据硬件mac地址和ip地址确定设备的，他们并不知道是何设备，他们只能确定这个设备有没有登录<br>2:因此我们利用自己的手机登录拨号，然后把路由器这个硬件伪装成我们已经登录的手机，就可以用路由器分享网络啦</p>
+<h2 id="一台路由器的操作（不推荐）"><a href="#一台路由器的操作（不推荐）" class="headerlink" title="一台路由器的操作（不推荐）"></a>一台路由器的操作（不推荐）</h2><p>1：首先利用运营商的方法，将网线插在路由器的lan(局域网)口，手机连接wifi，拨号，ok，可以上网了<br>2:记录下你手机的mac地址，wifi的ip地址，子网掩码，以及DNS，网关。(此时ip地址是运营商分配的地址，100开头，子网掩码一定只有两个225，网关也是100开头)ip地址192开头就是路由器分配的，因此此时你打开路由器管理界面应该是打不开的<br>3：记录好这一些后，关闭路由器，拔出网线，打开路由器，电脑连接后进入管理界面。<br>4：打开路由器上网设置，将路由器上网改为静态ip；此时你就可以填你刚才所记录的那些东西了。<br>5：填好之后，找到mac地址克隆；填入手机mac地址，然后克隆。<br>6：最后将网线插入wan口（广域网），最后就可以上网了。</p>
+<h2 id="多台路由器的操作（简单）"><a href="#多台路由器的操作（简单）" class="headerlink" title="多台路由器的操作（简单）"></a>多台路由器的操作（简单）</h2><h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>对于多台路由器，第一次搞好后就差不多结束了。因为断电后ip会刷新一遍，所以你每天的工作只需拿出手机，登录宽带，断开手机的连接，打开自己的路由器就可以用了。设想另一台路由器是你室友的，并且也是用的电信的宽带。</p>
+<h3 id="第一次操作"><a href="#第一次操作" class="headerlink" title="第一次操作"></a>第一次操作</h3><p>1.拿出你的手机，记录下手机的mac地址。<br>2.断开你路由器的所有网线连接，再开启路由器，用电脑登录路由器管理界面，上网方式改为dhcp（默认就是DHCP）；选择mac地址克隆，将手机的mac地址填入。<br>3.手机连接你室友的WiFi，并打开飞young登录，登录成功后将网线连接到路由器的wan口（广域网），一般来说，此时路由器应该是可以上网了，如果可以了，手机<strong>必须要断开室友的WiFi</strong>，手机此时可以连接自己的路由器上网。<br>5.路由器能上网后，手机不能连接室友的WiFi，一旦连接就得重来！！！</p>
+<h3 id="以后的每天"><a href="#以后的每天" class="headerlink" title="以后的每天"></a>以后的每天</h3><p>1.拔出路由器电源线，手机连接室友WiFi并登录，插入路由器电源线，手机断开室友的WiFi，结束。</p>
+]]></content>
+      <tags>
+        <tag>Tecnology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IOS描述文件分享</title>
+    <url>/2019/10/01/ios13beta/</url>
+    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本页面用于放一些ios描述文件</p>
+<h2 id="IOS13升级beta版本"><a href="#IOS13升级beta版本" class="headerlink" title="IOS13升级beta版本"></a>IOS13升级beta版本</h2><p><a href="http://iantang.gitee.io/blog/page/001/iOS_iPadOS_13_Beta_Profile.mobileconfig" target="_blank" rel="noopener">ios13升级bata版本</a></p>
+<h2 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h2>]]></content>
+      <tags>
+        <tag>Tecnology</tag>
+      </tags>
+  </entry>
+</search>
