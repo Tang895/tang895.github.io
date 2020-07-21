@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="Ian Tang">
   <meta name="keywords" content="">
-  <title>Tags - Tecnology ~ Ian Tang&#39;s blog</title>
+  <title>manjaro_install ~ Ian Tang&#39;s blog</title>
 
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
@@ -39,7 +39,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -122,7 +122,7 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
+    <div class="view intro-2" id="background" false
          style="background: url('/img/default.png')no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -132,6 +132,41 @@
               
             </span>
 
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  Tuesday, July 21st 2020, 6:59 pm
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    270 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
             
           </div>
 
@@ -143,42 +178,89 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-<!--  <p class="h4">2 posts in total.</p>-->
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/10/06/dianxinxiaoyuanwang/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">飞young电信校园网破解</span>
-      <span style="float: right;">10-06</span>
-    </a>
-  
-    
-    <a href="/2019/10/01/ios13beta/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">IOS描述文件分享</span>
-      <span style="float: right;">10-01</span>
-    </a>
-  
-</div>
 
-
-
-              </div>
-            </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="设置国内源"><a href="#设置国内源" class="headerlink" title="设置国内源"></a>设置国内源</h2><p><code>$sudo pacman-mirrors-i -c China -m rank</code></p>
+<h4 id="编辑archlinuxcn"><a href="#编辑archlinuxcn" class="headerlink" title="编辑archlinuxcn"></a>编辑archlinuxcn</h4><p><code>sudo nano /etc/pacman.conf</code></p>
+<p>添加以下代码</p>
+<pre><code class="bash">[archlinuxcn]
+Siglevel = Optional TrustedOnly
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</code></pre>
+<p>或者这个</p>
+<pre><code class="bash">[archlinuxcn]
+SigLevel = Optional TrustedOnly
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</code></pre>
+<h4 id="导入密钥"><a href="#导入密钥" class="headerlink" title="导入密钥"></a>导入密钥</h4><p>先升级<br><code>sudo pacman -Syy</code></p>
+<p>再导入密钥<br><code>sudo pacman -S archlinuxcn-keyring</code></p>
+<p>或者直接<br><code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><h4 id="安装输入法"><a href="#安装输入法" class="headerlink" title="安装输入法"></a>安装输入法</h4><p><code>sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin</code></p>
+<h4 id="配置输入法"><a href="#配置输入法" class="headerlink" title="配置输入法"></a>配置输入法</h4><p>编辑<br><code>nano /etc/enviroment</code></p>
+<p>在文件内写入三行</p>
+<pre><code class="bash">export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
+<p>重启生效</p>
+<h2 id="网易云音乐中文输入"><a href="#网易云音乐中文输入" class="headerlink" title="网易云音乐中文输入"></a>网易云音乐中文输入</h2><p>安装vlc（一般都有自带），修改文件。/usr/share/applications/netease-cloud-music.desktop, 在文件中修改Exec=/opt/netease/netease-cloud-music/netease-cloud-music %U</p>
+<h2 id="plasma运行deepin-wine程序"><a href="#plasma运行deepin-wine程序" class="headerlink" title="plasma运行deepin wine程序"></a>plasma运行deepin wine程序</h2><p>主要是QQ和TIM程序</p>
+<p>首先安装gnome-settings-daemon这个包，然后将/etc/xdg/aautostart/org.gnome.SettingsDaemon.XSettings.desktop复制到~/.config/autostart/</p>
+<p>最后去系统设置-&gt;开机和关机-&gt;启动，把里面的gnome setting打上勾，打勾后点击高级，将“只在plasma中自动启动勾上”</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/Linux">Linux</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/iantang/blog/raw/master/media/pictures/%E9%80%8F%E6%98%8E%E5%A4%B4%E5%83%8F2.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -257,6 +339,11 @@
 
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
@@ -297,7 +384,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Tag - Tecnology&nbsp;",
+        "manjaro_install&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 70,

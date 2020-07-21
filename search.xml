@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>manjaro_install</title>
+    <url>/2020/07/21/manjaro-install/</url>
+    <content><![CDATA[<h2 id="设置国内源"><a href="#设置国内源" class="headerlink" title="设置国内源"></a>设置国内源</h2><p><code>$sudo pacman-mirrors-i -c China -m rank</code></p>
+<h4 id="编辑archlinuxcn"><a href="#编辑archlinuxcn" class="headerlink" title="编辑archlinuxcn"></a>编辑archlinuxcn</h4><p><code>sudo nano /etc/pacman.conf</code></p>
+<p>添加以下代码</p>
+<pre><code class="bash">[archlinuxcn]
+Siglevel = Optional TrustedOnly
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</code></pre>
+<p>或者这个</p>
+<pre><code class="bash">[archlinuxcn]
+SigLevel = Optional TrustedOnly
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</code></pre>
+<h4 id="导入密钥"><a href="#导入密钥" class="headerlink" title="导入密钥"></a>导入密钥</h4><p>先升级<br><code>sudo pacman -Syy</code></p>
+<p>再导入密钥<br><code>sudo pacman -S archlinuxcn-keyring</code></p>
+<p>或者直接<br><code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><h4 id="安装输入法"><a href="#安装输入法" class="headerlink" title="安装输入法"></a>安装输入法</h4><p><code>sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin</code></p>
+<h4 id="配置输入法"><a href="#配置输入法" class="headerlink" title="配置输入法"></a>配置输入法</h4><p>编辑<br><code>nano /etc/enviroment</code></p>
+<p>在文件内写入三行</p>
+<pre><code class="bash">export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
+<p>重启生效</p>
+<h2 id="网易云音乐中文输入"><a href="#网易云音乐中文输入" class="headerlink" title="网易云音乐中文输入"></a>网易云音乐中文输入</h2><p>安装vlc（一般都有自带），修改文件。/usr/share/applications/netease-cloud-music.desktop, 在文件中修改Exec=/opt/netease/netease-cloud-music/netease-cloud-music %U</p>
+<h2 id="plasma运行deepin-wine程序"><a href="#plasma运行deepin-wine程序" class="headerlink" title="plasma运行deepin wine程序"></a>plasma运行deepin wine程序</h2><p>主要是QQ和TIM程序</p>
+<p>首先安装gnome-settings-daemon这个包，然后将/etc/xdg/aautostart/org.gnome.SettingsDaemon.XSettings.desktop复制到~/.config/autostart/</p>
+<p>最后去系统设置-&gt;开机和关机-&gt;启动，把里面的gnome setting打上勾，打勾后点击高级，将“只在plasma中自动启动勾上”</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决origin下载慢问题</title>
     <url>/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="解决origin下载慢问题"><a href="#解决origin下载慢问题" class="headerlink" title="解决origin下载慢问题"></a>解决origin下载慢问题</h2><p>最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。</p>
@@ -124,7 +156,7 @@ int main()
 <h3 id="以后的每天"><a href="#以后的每天" class="headerlink" title="以后的每天"></a>以后的每天</h3><p>1.拔出路由器电源线，手机连接室友WiFi并登录，插入路由器电源线，手机断开室友的WiFi，结束。</p>
 ]]></content>
       <tags>
-        <tag>Tecnology</tag>
+        <tag>Technology</tag>
       </tags>
   </entry>
   <entry>
@@ -134,7 +166,7 @@ int main()
 <h2 id="IOS13升级beta版本"><a href="#IOS13升级beta版本" class="headerlink" title="IOS13升级beta版本"></a>IOS13升级beta版本</h2><p><a href="http://iantang.gitee.io/blog/page/001/iOS_iPadOS_13_Beta_Profile.mobileconfig" target="_blank" rel="noopener">ios13升级bata版本</a></p>
 <h2 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h2>]]></content>
       <tags>
-        <tag>Tecnology</tag>
+        <tag>Technology</tag>
       </tags>
   </entry>
 </search>

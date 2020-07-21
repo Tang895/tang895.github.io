@@ -160,6 +160,58 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/07/21/manjaro-install/" target="_self">
+          <img src="/images/manjaro.jpg" srcset="/img/loading.gif" alt="manjaro_install" class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/07/21/manjaro-install/">
+        <p class="h4 index-header">manjaro_install</p>
+      </a>
+
+      <a href="/2020/07/21/manjaro-install/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">设置国内源$sudo pacman-mirrors-i -c China -m rank
+编辑archlinuxcnsudo nano /etc/pacman.conf
+添加以下代码
+[archlinuxcn]
+Siglevel = Optional TrustedOnly
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+或者这个
+[archlinuxcn]
+SigLevel = Optional TrustedOnly
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+导入密钥先升级sudo pacman -Syy
+再导入密钥sudo pacman -S archlinuxcn-keyring
+或者直接sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring
+中文输入法安装输入法sudo pacman -S fcitx-im fcitx-configtool fcitx-sogo</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-07-21&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Linux">Linux</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/" target="_self">
           <img src="/images/origin_logo.jpg" srcset="/img/loading.gif" alt="解决origin下载慢问题" class="index-img img-fluid rounded index-thumbnails">
         </a>
@@ -395,7 +447,7 @@ int main()
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/Tecnology">Tecnology</a>&nbsp;
+            <a href="/tags/Technology">Technology</a>&nbsp;
           
         
       </div>
@@ -436,7 +488,7 @@ IOS13升级beta版本ios13升级bata版本
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/Tecnology">Tecnology</a>&nbsp;
+            <a href="/tags/Technology">Technology</a>&nbsp;
           
         
       </div>
