@@ -1,53 +1,193 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>manjaro_install</title>
-    <url>/2020/07/21/manjaro-install/</url>
-    <content><![CDATA[<h2 id="设置国内源"><a href="#设置国内源" class="headerlink" title="设置国内源"></a>设置国内源</h2><p><code>$sudo pacman-mirrors-i -c China -m rank</code></p>
-<h4 id="编辑archlinuxcn"><a href="#编辑archlinuxcn" class="headerlink" title="编辑archlinuxcn"></a>编辑archlinuxcn</h4><p><code>sudo nano /etc/pacman.conf</code></p>
-<p>添加以下代码</p>
-<pre><code class="bash">[archlinuxcn]
-Siglevel = Optional TrustedOnly
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</code></pre>
-<p>或者这个</p>
-<pre><code class="bash">[archlinuxcn]
-SigLevel = Optional TrustedOnly
-Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</code></pre>
-<h4 id="导入密钥"><a href="#导入密钥" class="headerlink" title="导入密钥"></a>导入密钥</h4><p>先升级<br><code>sudo pacman -Syy</code></p>
-<p>再导入密钥<br><code>sudo pacman -S archlinuxcn-keyring</code></p>
-<p>或者直接<br><code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
-<h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><h4 id="安装输入法"><a href="#安装输入法" class="headerlink" title="安装输入法"></a>安装输入法</h4><p><code>sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin</code></p>
-<h4 id="配置输入法"><a href="#配置输入法" class="headerlink" title="配置输入法"></a>配置输入法</h4><p>编辑<br><code>nano /etc/enviroment</code></p>
-<p>在文件内写入三行</p>
-<pre><code class="bash">export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=&quot;@im=fcitx&quot;</code></pre>
-<p>重启生效</p>
-<h2 id="网易云音乐中文输入"><a href="#网易云音乐中文输入" class="headerlink" title="网易云音乐中文输入"></a>网易云音乐中文输入</h2><p>安装vlc（一般都有自带），修改文件。/usr/share/applications/netease-cloud-music.desktop, 在文件中修改Exec=/opt/netease/netease-cloud-music/netease-cloud-music %U</p>
-<h2 id="plasma运行deepin-wine程序"><a href="#plasma运行deepin-wine程序" class="headerlink" title="plasma运行deepin wine程序"></a>plasma运行deepin wine程序</h2><p>主要是运行QQ和TIM程序</p>
-<p>首先安装gnome-settings-daemon这个包，然后将/etc/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop复制到~/.config/autostart/</p>
-<p>最后去系统设置-&gt;开机和关机-&gt;启动，把里面的gnome setting打上勾，打勾后点击高级，将“只在plasma中自动启动勾上”如下图：<br><img src="/images/manjaro/1.jpg" srcset="/img/loading.gif" alt="avstar"></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决origin下载慢问题</title>
-    <url>/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="解决origin下载慢问题"><a href="#解决origin下载慢问题" class="headerlink" title="解决origin下载慢问题"></a>解决origin下载慢问题</h2><p>最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。</p>
-<h2 id="UsbEAm-hosts-Editor-v3-5"><a href="#UsbEAm-hosts-Editor-v3-5" class="headerlink" title="UsbEAm_hosts_Editor_v3.5"></a>UsbEAm_hosts_Editor_v3.5</h2><p><img src="/images/origin_speed/1.jpg" srcset="/img/loading.gif" alt="avatar"></p>
-<h2 id="可以直接测延迟然后选择"><a href="#可以直接测延迟然后选择" class="headerlink" title="可以直接测延迟然后选择"></a>可以直接测延迟然后选择</h2><p><img src="/images/origin_speed/2.jpg" srcset="/img/loading.gif" alt="avatar"><br>之后如果不想用的话可以直接恢复默认hosts；<br>工具直接去原文链接下载</p>
-<h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h3><p><a href="https://www.dogfight360.com/blog/" target="_blank" rel="noopener">原文</a></p>
-]]></content>
-      <tags>
-        <tag>Technology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>短学期实践日志</title>
-    <url>/2020/07/02/school/</url>
-    <content><![CDATA[<h1 id="短学期实践日志"><a href="#短学期实践日志" class="headerlink" title="短学期实践日志"></a>短学期实践日志</h1><p>本文为了完成学校要求的日志，运用了凑字数的语法</p>
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="description" content="">
+  <meta name="author" content="Ian Tang">
+  <meta name="keywords" content="">
+  <title>短学期实践日志 ~ Ian Tang&#39;s blog</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Ian Tang's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/2020/03/15/photos/">Photos</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">Links</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" false
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  Thursday, July 2nd 2020, 8:59 am
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    5.5k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      22 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="短学期实践日志"><a href="#短学期实践日志" class="headerlink" title="短学期实践日志"></a>短学期实践日志</h1><p>本文为了完成学校要求的日志，运用了凑字数的语法</p>
 <h2 id="第一天-python基础"><a href="#第一天-python基础" class="headerlink" title="第一天-python基础"></a>第一天-python基础</h2><p>今天是学习python的第一天， 我准备开始学习python的一些基础语法。在刚开始学的时候，就能明显感觉到python语言和C语言的不同，python中没有分号，这让我很难受也不太习惯，对比C语言，python中的括号也很少，而且没有大括号，一切分割都是靠”对齐“来区分，而且python很”高级“，在声明变量的时候，不需要指定变量的格式，这虽然很方便，但是我很不习惯，对于每次输入数字的时候，我都束手无策，因为python都是默认作为文本输入，也就是C++中的string，后来找到了解决方法，用强制转换，python中可以将字符串直接转为int型。刚开始的时候就曾听说，学完c之后再学其他语言要简单一些，我有点怀疑这句话，在今天结束时我才意识到这句话是非常正确的。虽然python的语法我很不习惯，并且受到C++影响我很难记住python的语法，但是要知道今天一天我就几乎入门了python可以用其做一些事情，这都是学完C之后才能做到的。这在我学C语言的时候是一个学期的工作量，以前需要了解函数，循环，变量的具体内涵，学完C之后，这些都不用去了解了，今天学python时，只需要记住语法就行了。下面一个程序几乎包括了所有的基础语法。<br><img src="/images/school1.png" srcset="/img/loading.gif" alt="avatar"><br>我也尝试用python去做一些程序设计的题，这在以前用C++的时候是需要学半个学期才能使用的</p>
 <h4 id="辗转相除法求最大公倍数"><a href="#辗转相除法求最大公倍数" class="headerlink" title="辗转相除法求最大公倍数"></a>辗转相除法求最大公倍数</h4><p>代码：<br><img src="/images/school-code.png" srcset="/img/loading.gif" alt="avatar"><br>运行结果：<br><img src="/images/school2.png" srcset="/img/loading.gif" alt="avatar"></p>
 <h4 id="旅行家的预算（贪心）"><a href="#旅行家的预算（贪心）" class="headerlink" title="旅行家的预算（贪心）"></a>旅行家的预算（贪心）</h4><p>代码：<br><img src="/images/school-code2.png" srcset="/img/loading.gif" alt="avatar"><br>运行结果：<br><img src="/images/school3.png" srcset="/img/loading.gif" alt="avatar"><br>算法是对的，但是python的运行速度慢，所以报错（time Exceeded）</p>
@@ -390,134 +530,297 @@ while index&lt;=10000:
 <h2 id="第18天-周记3"><a href="#第18天-周记3" class="headerlink" title="第18天-周记3"></a>第18天-周记3</h2><p>这周在对网站进行爬取时，发现之前所做的计划可能会有点难，因为那个网站反爬技术有点高，当我按下F12时，就发现了这个网站所埋下的坑，当网站监测到有人在对其进行调试的时候，会无限地callback一些函数，函数里没有什么实质的内容，仅仅是断点，让爬虫者无法获取相关信息。但是我最后还是将其解决了，但是在我解决这个问题之后，发现这个网站是动态生成的内容，并且内容是经过加密的，这对于我来说，挑战难度太大，因此，我放弃了这样一个网站。这应该算是这次项目的一个遗憾吧，没能对这样一个近乎完美的网站进行爬取数据。但是我最后又找到了另外一个网站，<a href="http://www.soopat.com，" target="_blank" rel="noopener">www.soopat.com，</a> 这个也是一个专利的网站，但是质量没有之前那个高。<br>这个网站唯一的反爬手段便是在一个IP访问多次之后会进行验证。这题对我来说无解，因此我一次只能爬取80条数据，然后爬很多次。<br><img src="/images/school/16.png" srcset="/img/loading.gif" alt="avatar"></p>
 <h2 id="第19天"><a href="#第19天" class="headerlink" title="第19天"></a>第19天</h2><p>在音乐方面赚到了人生的第一桶金<br><img src="/images/music.jpg" srcset="/img/loading.gif" alt="avatar"></p>
 <h2 id="第20天-周记4"><a href="#第20天-周记4" class="headerlink" title="第20天-周记4"></a>第20天-周记4</h2><p>项目结束了！学习到很多，也留下了许多遗憾，最令我难忘的，其实并不是爬虫技术，python教程之类的，而是许多冷门的知识点，一个人如果没有学习过爬虫，根本不会了解何为user-agent，例如我们在用手机访问百度和用电脑访问百度得到的是不同的界面，原因就是因为user-agent告诉了网站我们所使用的浏览器和系统。若没有学习爬虫的相关知识，是很难知道这些东西的；再者如cookie，在之前我听到cookie这个单词，只会觉得他是“饼干”的意思，现在了解到cookie是一个登录网站很重要的东西，在我们输入完账号密码之后，网站会给浏览器一个cookie，相当于通行证，而浏览器会保存这个cookie，在下一次我们再次进入这个网站时，便无需登录就可以进入网站。当然学到的知识点是非常多的，包括但不限于浏览器F12调试、Ajax、post请求和get请求、post请求的表单（params）、selenium模拟等。这些都是非常好玩的东西，在学完爬虫之后，现在我每遇到一个网站，我可以清晰地看到这个网站所使用地技术，它地反爬能力高不高等特点。最后的项目虽然来说都是之前学的基础，但是真正编写起来还是会在很多地方无能为力，尤其在正则表达式的编写上，但是最后好在还是解决了这些问题。</p>
-]]></content>
-      <tags>
-        <tag>School</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>短学期计划</title>
-    <url>/2020/06/20/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92/</url>
-    <content><![CDATA[<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><ul>
-<li>python基础学习</li>
-<li>写博客</li>
-<li>python简单抓包（抓取某网站图片）</li>
-<li>python 对excel表格的处理</li>
-<li>python中药专利抓取</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>School</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macdock</title>
-    <url>/2020/05/04/macdock/</url>
-    <content><![CDATA[<h2 id="Mac设置启动台图标大小"><a href="#Mac设置启动台图标大小" class="headerlink" title="Mac设置启动台图标大小"></a>Mac设置启动台图标大小</h2><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/images/macdock.jpg" srcset="/img/loading.gif" alt="avatar"></p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>1:调整为一列10个
-defaults write com.apple.dock springboard-columns -int 10
-2:调整行
-defaults write com.apple.dock springboard-rows -int 8
-重置Launchpad
-defaults write com.apple.dock ResetLaunchPad -bool TRUE
-重启
-killall Dock</code></pre><h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><pre><code>defaults write com.apple.dock springboard-columns -int 10
 
-defaults write com.apple.dock springboard-rows -int 8
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/School">School</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
 
-defaults write com.apple.dock ResetLaunchPad -bool TRUE
+    </div>
+  </div>
+</div>
 
-killall Dock
-</code></pre>]]></content>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何求解n个数的最小公倍数</title>
-    <url>/2020/02/16/thesma/</url>
-    <content><![CDATA[<h2 id="求解n个数字的最小公倍数"><a href="#求解n个数字的最小公倍数" class="headerlink" title="求解n个数字的最小公倍数"></a>求解n个数字的最小公倍数</h2><p>对于n个数字，可以先将这一串数字的初始值用数组存起来，然后复制一个数组。对于n个数字，每次找到最小的数，将最小的数字加上它的初始值，循环以上，直到所有的数字相等，就拿到了最小公倍数。</p>
-<h3 id="判断所有数字相等的方法"><a href="#判断所有数字相等的方法" class="headerlink" title="判断所有数字相等的方法"></a>判断所有数字相等的方法</h3><ol>
-<li>找出最大数与最小数，判断是否相等</li>
-<li>定义一个用于判断的变量，其初始值设为零。然后循环中判断相邻数之间是否相等，相等则将用于判断的变量加一，不等则跳出循环。最后判断用于判断的变量的值是否满足n-1；</li>
-<li>将数字排序后判断首和尾是否相等；</li>
-</ol>
-<h3 id="示例代码-c"><a href="#示例代码-c" class="headerlink" title="示例代码(c++)"></a>示例代码(c++)</h3><pre><code>#include&lt;cstdio&gt;
-#include&lt;iostream&gt;
-using namespace std;
-int main()
-{
-    int n;
-    int num[10001];
-    int num_copy[10001];
-    cin&gt;&gt;n;
-    for(int i=0;i&lt;n;i++){
-        cin&gt;&gt;num[i];
-        num_copy[i]=num[i];
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/iantang/blog/raw/master/media/pictures/%E9%80%8F%E6%98%8E%E5%A4%B4%E5%83%8F2.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
+  
+  <br>
+
+
+
+    
+
+
+    <!-- cnzz Analytics icon -->
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- cnzz Analytics -->
+  
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "短学期实践日志&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "ture",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
     }
-    int min=num[0];
-    int k=0;
-    int judge =0;
-    while(1){
-        judge=0;
-        k=0;
-        min=num[0];
-        for(int i=0;i&lt;n-1;i++){
-            if(num[i]==num[i+1]){
-                judge++;
-            }
-            else{
-                break;
-            }
-        }
-        if(judge==n-1){
-            cout&lt;&lt;num[0];
-            break;
-        }
-        else{
+    anchors.add(res.join(", "))
+  </script>
 
-            for(int i=1;i&lt;n;i++){
-                if(num[i]&lt;min){
-                    min=num[i];
-                    k=i;
-                }
-            }
-            num[k]+=num_copy[k];
-        }
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
     }
-    return 0;
-}</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.matrix67.com/blog/archives/554" target="_blank" rel="noopener">不用除法，如何求解n个数的最小公倍数</a></p>
-]]></content>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>飞young电信校园网破解</title>
-    <url>/2019/10/06/dianxinxiaoyuanwang/</url>
-    <content><![CDATA[<h2 id="作者硬件-非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点"><a href="#作者硬件-非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点" class="headerlink" title="作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)"></a>作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)</h2><ul>
-<li>小米路由器4c</li>
-<li>一台电脑，用于路由器管理界面的登录</li>
-<li>手机一部，用于拨号<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2>路由器需支持mac地址克隆功能。如果你有两台路由器那操作方法会大大简化。不必一定自己有两台，如果你室友有或者隔壁室友有就可以。<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2></li>
-</ul>
-<p>1：运营商是根据硬件mac地址和ip地址确定设备的，他们并不知道是何设备，他们只能确定这个设备有没有登录<br>2:因此我们利用自己的手机登录拨号，然后把路由器这个硬件伪装成我们已经登录的手机，就可以用路由器分享网络啦</p>
-<h2 id="一台路由器的操作（不推荐）"><a href="#一台路由器的操作（不推荐）" class="headerlink" title="一台路由器的操作（不推荐）"></a>一台路由器的操作（不推荐）</h2><p>1：首先利用运营商的方法，将网线插在路由器的lan(局域网)口，手机连接wifi，拨号，ok，可以上网了<br>2:记录下你手机的mac地址，wifi的ip地址，子网掩码，以及DNS，网关。(此时ip地址是运营商分配的地址，100开头，子网掩码一定只有两个225，网关也是100开头)ip地址192开头就是路由器分配的，因此此时你打开路由器管理界面应该是打不开的<br>3：记录好这一些后，关闭路由器，拔出网线，打开路由器，电脑连接后进入管理界面。<br>4：打开路由器上网设置，将路由器上网改为静态ip；此时你就可以填你刚才所记录的那些东西了。<br>5：填好之后，找到mac地址克隆；填入手机mac地址，然后克隆。<br>6：最后将网线插入wan口（广域网），最后就可以上网了。</p>
-<h2 id="多台路由器的操作（简单）"><a href="#多台路由器的操作（简单）" class="headerlink" title="多台路由器的操作（简单）"></a>多台路由器的操作（简单）</h2><h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>对于多台路由器，第一次搞好后就差不多结束了。因为断电后ip会刷新一遍，所以你每天的工作只需拿出手机，登录宽带，断开手机的连接，打开自己的路由器就可以用了。设想另一台路由器是你室友的，并且也是用的电信的宽带。</p>
-<h3 id="第一次操作"><a href="#第一次操作" class="headerlink" title="第一次操作"></a>第一次操作</h3><p>1.拿出你的手机，记录下手机的mac地址。<br>2.断开你路由器的所有网线连接，再开启路由器，用电脑登录路由器管理界面，上网方式改为dhcp（默认就是DHCP）；选择mac地址克隆，将手机的mac地址填入。<br>3.手机连接你室友的WiFi，并打开飞young登录，登录成功后将网线连接到路由器的wan口（广域网），一般来说，此时路由器应该是可以上网了，如果可以了，手机<strong>必须要断开室友的WiFi</strong>，手机此时可以连接自己的路由器上网。<br>5.路由器能上网后，手机不能连接室友的WiFi，一旦连接就得重来！！！</p>
-<h3 id="以后的每天"><a href="#以后的每天" class="headerlink" title="以后的每天"></a>以后的每天</h3><p>1.拔出路由器电源线，手机连接室友WiFi并登录，插入路由器电源线，手机断开室友的WiFi，结束。</p>
-]]></content>
-      <tags>
-        <tag>Technology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IOS描述文件分享</title>
-    <url>/2019/10/01/ios13beta/</url>
-    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本页面用于放一些ios描述文件</p>
-<h2 id="IOS13升级beta版本"><a href="#IOS13升级beta版本" class="headerlink" title="IOS13升级beta版本"></a>IOS13升级beta版本</h2><p><a href="http://iantang.gitee.io/blog/page/001/iOS_iPadOS_13_Beta_Profile.mobileconfig" target="_blank" rel="noopener">ios13升级bata版本</a></p>
-<h2 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h2>]]></content>
-      <tags>
-        <tag>Technology</tag>
-      </tags>
-  </entry>
-</search>
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+
+
+
+
+
+</body>
+</html>
