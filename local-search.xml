@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>记一次pacman的makepkg-本地二进制打包</title>
+    <link href="/2023/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85/"/>
+    <url>/2023/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85/</url>
+    
+    <content type="html"><![CDATA[<h3 id="创建PKGBUILD文件"><a href="#创建PKGBUILD文件" class="headerlink" title="创建PKGBUILD文件"></a>创建PKGBUILD文件</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">pkgname</span>=sendfile<br><span class="hljs-attribute">pkgver</span>=1.1<br><span class="hljs-attribute">pkgrel</span>=1<br>arch=(<span class="hljs-string">&#x27;x86_64&#x27;</span>)<br>licence=(<span class="hljs-string">&#x27;MIT&#x27;</span>)<br>package()&#123;<br>    echo <span class="hljs-string">&#x27;helloworld&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure><p>pkgrel相当于打包第几次？package是一个函数，打包时会运行这个<br>运行 makepkg</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">makepkg</span><br></code></pre></td></tr></table></figure><p>目录会生成src,pkg目录，将我们的二进制文件，放在src里面去，我这里的二进制文件名字叫sendfile。打包会进入fakeroot环境，pkg目录就是root目录。因此，我们将src里面的文件移动到pkg目录就行了，移动的代码写在package函数里面。${pkgdir}就可以访问pkg目录，同理 $srcdir就可以访问src目录。代码如下：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">pkgname</span>=sendfile<br><span class="hljs-attribute">pkgver</span>=1.1<br><span class="hljs-attribute">pkgrel</span>=1<br>arch=(<span class="hljs-string">&#x27;x86_64&#x27;</span>)<br>licence=(<span class="hljs-string">&#x27;MIT&#x27;</span>)<br>package()&#123;<br>    cd <span class="hljs-variable">$srcdir</span><br>    <span class="hljs-keyword">if</span> [ ! -d <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;pkgdir&#125;</span>/usr/bin&quot;</span> ]; then<br>        mkdir -p <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;pkgdir&#125;</span>/usr/bin&quot;</span><br>    fi    <br>    install <span class="hljs-string">&quot;sendfile&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;pkgdir&#125;</span>/usr/bin&quot;</span><br>    echo <span class="hljs-string">&quot;finish&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure><p>最后makepkg完成打包。最后会在当前目录生成一个zst文件，就是pacman的安装文件，使用&#96;&#96;&#96;</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sudo</span> pacman -U xxx.zst<br></code></pre></td></tr></table></figure><p>安装</p><img src="/2023/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85/2023-04-14-11-43-47-image.png" class="">]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大文件的优雅分享</title>
+    <link href="/2022/09/22/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB/"/>
+    <url>/2022/09/22/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB/</url>
+    
+    <content type="html"><![CDATA[<h2 id="大文件优雅分享"><a href="#大文件优雅分享" class="headerlink" title="大文件优雅分享"></a>大文件优雅分享</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学校上网课的时候，或者平时上课，都会遇见老师要传文件给学生的情况，很多时候都是小文件，这时候用网盘、QQ等IM软件非常简单，但有些时候需要用到大文件的分享，尤其是虚拟机，文件大。<br>IM软件分享需要会员，速度也不快，网盘需要会员才能加速下载。有的人还会把文件分卷压缩之后再传，简直就是找骂。</p><h3 id="去中心化"><a href="#去中心化" class="headerlink" title="去中心化"></a>去中心化</h3><p>其实这时候使用去中心化的分享方法刚好可以解决需求，分享文件速度快，不占用带宽。人越多，越快。这里推荐一个软件—–btsync，下载地址<a href="https://www.resilio.com/platforms/desktop/">resilio btsync下载</a><br>无需注册，就可以使用。分享的时候，将key给别人就行了。听说创始人也是种子下载的创始人。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>未分类</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Powershell的配置</title>
+    <link href="/2022/09/20/Powershell%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
+    <url>/2022/09/20/Powershell%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Powershell配置文件"><a href="#Powershell配置文件" class="headerlink" title="Powershell配置文件"></a>Powershell配置文件</h2><p>###第一步，安装Powershell<br>在microsoft store 里面安装Powershell，不要用microsoft powershell，后者是电脑自带的。</p><h3 id="第二步，安装一个终端的编辑器"><a href="#第二步，安装一个终端的编辑器" class="headerlink" title="第二步，安装一个终端的编辑器"></a>第二步，安装一个终端的编辑器</h3><p>比如nano，vim，这两个在Linux上用的比较多，但是Windows上比较复杂，而且有学习成本，这里推荐一个<br>GitHub开源的编辑器，micro，他的快捷键都是Windows的标准，没有入门的门槛。项目地址：<a href="https://github.com/zyedidia/micro">GitHub micro 链接</a><br>打开powershell,输入<code>micro -mkparents true $profile</code><br>随便输入一个东西，比如#xxx然后ctrl+s保存。</p><h3 id="本人用的配置文件分享"><a href="#本人用的配置文件分享" class="headerlink" title="本人用的配置文件分享"></a>本人用的配置文件分享</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs bash">Set-Alias getlist <span class="hljs-built_in">ls</span><br>Set-Alias cl <span class="hljs-string">&#x27;clear&#x27;</span><br>Set-Alias py python<br><span class="hljs-comment">#打开历史记录</span><br>Set-PSReadLineOption -PredictionSource History<br><span class="hljs-comment">#Set-Alias ppip &quot;pip -i http://pypi.doubanio.com/simple/ --trusted-host pyi.doubanio.com&quot;</span><br><span class="hljs-comment">#Set-Alias pr &#x27;./pr.ps1&#x27;</span><br><span class="hljs-variable">$mypath</span>=<span class="hljs-string">&quot;C:/users/ian/ianhome/mypath&quot;</span><br><span class="hljs-keyword">function</span> nnmap([string]<span class="hljs-variable">$parm</span>)&#123;<br><br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$parm</span><br>nmap <span class="hljs-variable">$parm</span> -O -sS<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">pr</span></span>()&#123;<br><span class="hljs-built_in">set</span> t <span class="hljs-string">&quot;powershell全局代理&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$t</span><br><span class="hljs-variable">$Env</span>:http_proxy=<span class="hljs-string">&quot;http://127.0.0.1:11223&quot;</span><br><span class="hljs-variable">$Env</span>:https_proxy=<span class="hljs-string">&quot;http://127.0.0.1:11223&quot;</span><br><span class="hljs-variable">$t</span>=<span class="hljs-string">&quot;代理地址：&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$t</span><br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$Env</span>:http_proxy<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$Env</span>:https_proxy<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">nopr</span></span>()&#123;<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;终端取消代理...&quot;</span><br><span class="hljs-variable">$Env</span>:http_proxy=<span class="hljs-string">&quot;&quot;</span><br><span class="hljs-variable">$Env</span>:https_proxy=<span class="hljs-string">&quot;&quot;</span><br>&#125;<br><br><span class="hljs-keyword">function</span> ppip([string]<span class="hljs-variable">$mod</span>,[string]<span class="hljs-variable">$r</span>)&#123;<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$parm</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;pip 临时换源安装ing&quot;</span><br><span class="hljs-variable">$command</span>=<span class="hljs-string">&quot;&quot;</span><br><span class="hljs-keyword">if</span>(<span class="hljs-variable">$r</span>)&#123;<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;read TXT mode&quot;</span><br><span class="hljs-variable">$command</span>=<span class="hljs-string">&quot;pip install -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com -r &quot;</span>+<span class="hljs-variable">$r</span><br>pip install -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com -r <span class="hljs-variable">$r</span><br>&#125;<br>elseif(<span class="hljs-variable">$mod</span>)&#123;<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Common Mode&quot;</span><br><span class="hljs-variable">$command</span>=<span class="hljs-string">&quot;pip install -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com &quot;</span>+<span class="hljs-variable">$mod</span><br>pip install -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com <span class="hljs-variable">$mod</span><br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Error No input module&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Use : ppip xxx OR ppip -r requirements.txt&quot;</span><br>&#125;<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Used Command: &quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$command</span><br><span class="hljs-built_in">return</span><br>&#125;<br><br><br><br><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>浅谈go二维数组的深复制</title>
+    <link href="/2022/07/10/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6/"/>
+    <url>/2022/07/10/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="浅谈go二维数组的深复制"><a href="#浅谈go二维数组的深复制" class="headerlink" title="浅谈go二维数组的深复制"></a>浅谈go二维数组的深复制</h2><p>在go语言中，对于一个数组的赋值，和python一样，其实并没有开辟新空间,比如下面这行代码：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    source:=[]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;<br>    dist:=[]<span class="hljs-type">int</span>&#123;&#125;<br>    dist=source<br>    dist[<span class="hljs-number">0</span>]=<span class="hljs-number">999</span> <span class="hljs-comment">//对第二个数组进行修改</span><br><br>    fmt.Println(source)<br>&#125;<br></code></pre></td></tr></table></figure><p>打印的结果，为 [999,2,3,4]。这时候如果想对第二个数组进行修改，并且不影响原数组，也就是说，想让他们两个独立，这时候就需要关键字copy</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    source:=[]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;<br>    dist:=[]<span class="hljs-type">int</span>&#123;&#125;<br>    <span class="hljs-built_in">copy</span>(dist,source)<br>    dist[<span class="hljs-number">0</span>]=<span class="hljs-number">999</span> <span class="hljs-comment">//对第二个数组进行修改</span><br>    fmt.Println(source)<br>&#125;<br></code></pre></td></tr></table></figure><p>输出的结果为[1,2,3,4]。这是一维数组，很好写，也很简单。</p><h3 id="二维数组的情况"><a href="#二维数组的情况" class="headerlink" title="二维数组的情况"></a>二维数组的情况</h3><p>二维数组的时候，情况变得复杂起来,比如你看下面的代码</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    source:=[][]<span class="hljs-type">int</span>&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>&#125;&#125;<br>    dist:=[][]<span class="hljs-type">int</span>&#123;&#125;<br>    <span class="hljs-built_in">copy</span>(dist,source)<br>    fmt.Println(dist)<span class="hljs-comment">//直接对第二个数组进行输出</span><br>&#125;<br></code></pre></td></tr></table></figure><p>输出的结果：[] 为空，虽然没有报错，但是实际并没有成功，也就是说，copy只能复制一维的，那我们可以遍历二维数组，然后一个一个的进行复制，行不行？答案是：可以，但是对于写法有要求。先来一份正确的写法</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    source:=[][]<span class="hljs-type">int</span>&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>&#125;&#125;<br><br>    dist:=<span class="hljs-built_in">make</span>([][]<span class="hljs-type">int</span>,<span class="hljs-built_in">len</span>(source))<br><br>    <span class="hljs-keyword">for</span> i:= <span class="hljs-keyword">range</span> source&#123;<br>        dist[i]=<span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>,<span class="hljs-built_in">len</span>(source[i]))<br>        <span class="hljs-built_in">copy</span>(dist[i],source[i])<br>    &#125;<br><br>    fmt.Println(dist)<br>&#125;<br></code></pre></td></tr></table></figure><p>上面的代码中，有两个make，都不可以省略。第一个make开辟数组的行数，（注：len(source)的值为2，因为source只有两行。）。第二个make开辟数组的空间，这个比较好理解。下面是错误的示范。</p><h3 id="错误示范"><a href="#错误示范" class="headerlink" title="错误示范"></a>错误示范</h3><ul><li><p>不写make可不可以？</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  source:=[][]<span class="hljs-type">int</span>&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>&#125;&#125;<br><br>  dist:=[][]<span class="hljs-type">int</span>&#123;&#125;<br><br>  <span class="hljs-keyword">for</span> i:= <span class="hljs-keyword">range</span> source&#123;<br>      <span class="hljs-built_in">copy</span>(dist[i],source[i])<br>  &#125;<br><br>  fmt.Println(dist)<br>&#125;<br></code></pre></td></tr></table></figure><p>不行。</p></li><li><p>写一个make可不可以</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  source:=[][]<span class="hljs-type">int</span>&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>&#125;&#125;<br><br>  dist:=<span class="hljs-built_in">make</span>([][]<span class="hljs-type">int</span>,<span class="hljs-built_in">len</span>(source))<br><br>  <span class="hljs-keyword">for</span> i:= <span class="hljs-keyword">range</span> source&#123;<br>      <span class="hljs-comment">//第二个不写</span><br>      <span class="hljs-comment">//dist[i]=make([]int,len(source[i]))</span><br>      <span class="hljs-built_in">copy</span>(dist[i],source[i])<br>  &#125;<br><br>  fmt.Println(dist)<br>&#125;<br></code></pre></td></tr></table></figure><p>编译可通过，但是dist里面为空</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  source:=[][]<span class="hljs-type">int</span>&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>&#125;&#125;<br><br>  dist:=[][]<span class="hljs-type">int</span>&#123;&#125;<br>  <span class="hljs-keyword">for</span> i:= <span class="hljs-keyword">range</span> source&#123;<br>      dist[i]=<span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>,<span class="hljs-built_in">len</span>(source[i]))<br>      <span class="hljs-built_in">copy</span>(dist[i],source[i])<br>  &#125;<br><br>  fmt.Println(dist)<br>&#125;<br></code></pre></td></tr></table></figure><p>编译报错，数组越界，length 0 就越界</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Go</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>各个终端设置代理的方法</title>
+    <link href="/2022/07/08/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <url>/2022/07/08/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h3 id="端口以11223为例子"><a href="#端口以11223为例子" class="headerlink" title="端口以11223为例子"></a>端口以11223为例子</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">cmd:   set http_proxy=http://127.0.0.1:11223 &amp; set https_proxy=http://127.0.0.1:11223<br><br>powershell: $Env:http_proxy=&quot;http://127.0.0.1:11223&quot;;$Env:https_proxy=&quot;http://127.0.0.1:11223&quot;<br><br>unix: export HTTP_PROXY=http://127.0.0.1:11223; export HTTPS_PROXY=http://127.0.0.1:11223; export ALL_PROXY=socks5://127.0.0.1:11223<br><br><br>pip: -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com #临时换源<br><br>npm config set registry https://registry.npm.taobao.org   #npm 永久镜像<br>npm install -g cnpm --registry=https://registry.npm.taobao.org #用cnpm代替，cnpm走国内，npm不做任何更改<br></code></pre></td></tr></table></figure><h3 id="todo……"><a href="#todo……" class="headerlink" title="todo……"></a>todo……</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Proxy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Python+QT打包为单个exe的方法</title>
+    <link href="/2022/07/08/Python-QT%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <url>/2022/07/08/Python-QT%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Python打包exe"><a href="#Python打包exe" class="headerlink" title="Python打包exe"></a>Python打包exe</h2><p>Python打包exe用pyinstaller，很简单，网上有很多教程，</p><p>对于python程序打包，使用的都是pyinstaller，以下为pyinstaller的一些用法。</p><ul><li>-F 只生成EXE</li><li>-icon 指定exe的icon</li><li>-w 去除黑框框<br>在生成完exe后，里面不会包含QT的ui文件，不仅是ui，images及各种媒体文件都不会包含，需要自己在源代码中指定路径（这里建议使用相对路径）。当我们想把这个程序分享给别人的时候，需要分享一个压缩包，这一点都不优雅，因为通常来说python+QT我们普通人写的都是一些小项目，因此如果能打包成一个exe，绿色运行就好了，这里介绍一个软件，enigma virtual box，它可以把程序打包为单个exe文件，绿色运行，看软件的名字就可知道，打包之后的exe相当于一个虚拟机，里面包含了所有文件。<br>软件官网：<a href="https://enigmaprotector.com/en/aboutvb.html">EnigamaVirtualBox官网</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>test</title>
+    <link href="/2022/07/07/test/"/>
+    <url>/2022/07/07/test/</url>
+    
+    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>yes,this is a test page</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>未分类</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>manjaro_install</title>
+    <link href="/2020/07/21/manjaro-install/"/>
+    <url>/2020/07/21/manjaro-install/</url>
+    
+    <content type="html"><![CDATA[<h1 id="manjaro-install"><a href="#manjaro-install" class="headerlink" title="manjaro-install"></a>manjaro-install</h1><h2 id="设置国内源"><a href="#设置国内源" class="headerlink" title="设置国内源"></a>设置国内源</h2><p><code>$sudo pacman-mirrors-i -c China -m rank</code></p><h3 id="编辑archlinuxcn"><a href="#编辑archlinuxcn" class="headerlink" title="编辑archlinuxcn"></a>编辑archlinuxcn</h3><p><code>sudo nano /etc/pacman.conf</code></p><p>添加以下代码</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[archlinuxcn]</span><span class="hljs-attr">Siglevel</span> = Optional TrustedOnly<br><span class="hljs-attr">Server</span> = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure><p>或者这个</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[archlinuxcn]</span><span class="hljs-attr">SigLevel</span> = Optional TrustedOnly<br><span class="hljs-attr">Server</span> = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure><h3 id="导入密钥"><a href="#导入密钥" class="headerlink" title="导入密钥"></a>导入密钥</h3><p>先升级 <code>sudo pacman -Syy</code></p><p>再导入密钥 <code>sudo pacman -S archlinuxcn-keyring</code></p><p>或者直接 <code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p><h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><h3 id="安装输入法"><a href="#安装输入法" class="headerlink" title="安装输入法"></a>安装输入法</h3><p><code>sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin</code> </p><h4 id="配置输入法"><a href="#配置输入法" class="headerlink" title="配置输入法"></a>配置输入法</h4><p>编辑 <code>sudo nano /etc/enviroment</code></p><p>在文件内写入三行</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">GTK_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">QT_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">XMODIFIERS</span>=<span class="hljs-string">&quot;@im=fcitx&quot;</span><br></code></pre></td></tr></table></figure><p>重启生效 </p><h2 id="中文输入法二，fcitx5"><a href="#中文输入法二，fcitx5" class="headerlink" title="中文输入法二，fcitx5"></a>中文输入法二，fcitx5</h2><h4 id="卸载之前的fcitx"><a href="#卸载之前的fcitx" class="headerlink" title="卸载之前的fcitx"></a>卸载之前的fcitx</h4><p><code>sudo pacman -Rc fcitx</code></p><h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><p><code>sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk kcm-fcitx5</code> 编辑 <code>sudo nano /etc/enviroment</code></p><p>在文件内写入三行</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">GTK_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">QT_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">XMODIFIERS</span>=<span class="hljs-string">&quot;@im=fcitx&quot;</span><br></code></pre></td></tr></table></figure><p>start</p><p><code>fcitx5</code></p><p>add auto start</p><p><code>sudo cp /usr/share/applications/fcitx5.desktop /etc/xdg/autostart/</code></p><h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><p><code>reboot</code> </p><h2 id="网易云音乐中文输入"><a href="#网易云音乐中文输入" class="headerlink" title="网易云音乐中文输入"></a>网易云音乐中文输入</h2><p>安装vlc（一般都有自带），修改文件。&#x2F;usr&#x2F;share&#x2F;applications&#x2F;netease-cloud-music.desktop, 在文件中修改Exec&#x3D;&#x2F;opt&#x2F;netease&#x2F;netease-cloud-music&#x2F;netease-cloud-music %U</p><h2 id="plasma运行deepin-wine程序"><a href="#plasma运行deepin-wine程序" class="headerlink" title="plasma运行deepin wine程序"></a>plasma运行deepin wine程序</h2><p>主要是运行QQ和TIM程序</p><p>首先安装gnome-settings-daemon这个包，然后将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;org.gnome.SettingsDaemon.XSettings.desktop复制到~&#x2F;.config&#x2F;autostart&#x2F;</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo pacman -S gnome-settings-daemon<br>sudo cp <span class="hljs-regexp">/etc/</span>xdg<span class="hljs-regexp">/autostart/</span>org.gnome.SettingsDaemon.XSettings.desktop ~<span class="hljs-regexp">/.config/</span>autostart/<br></code></pre></td></tr></table></figure><p>最后去系统设置-&gt;开机和关机-&gt;启动，把里面的gnome setting打上勾，打勾后点击高级，将“只在plasma中自动启动勾上”如下图：</p><p><img src="/images/manjaro/1.jpg" alt="/images/manjaro/1.jpg"></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h3><p>系统字体：苹方-bold</p><p>代码字体：SF-MONO </p><h3 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs clean">sudo pacman -S go #the go language<br>sudo pacman -S qv2ray<br>sudo pacman -S telegram-desktop<br>sudo pacman -S golandsudo pacman -S clion<br>sudo pacman -S pycharm-community-edition<br>sudo pacman -S visual-studio-<span class="hljs-keyword">code</span>-bin<br>sudo pacman -S cantor # math<br>sudo pacman -S kalgebra # math<br>sudo pacman -S libreoffice-fresh libreoffice-fresh-zh-cn<br>sudo pacman -S ttf-wps-fonts wps-office<br>sudo pacman -S krita #photoshop<br>sudo pacman -S gimp #photoshop<br>sudo pacman -S minuet #chords_learning<br>sudo pacman -S atom<br>sudo pacman -S cuttlefish #icons for developers<br>sudo pacman -S flameshot #screenshot<br>sudo pacman -S ardour #music_creator<br>sudo pacman -S gestures #enable gestures<br>sudo pacman -S fish zsh #good shell<br>sudo pacman -S clang #C language<br>sudo pacman -S jdk11-openjdk #java<br>sudo pacman -S cmake<br>sudo pacman -S kdenlive #the video clip<br>sudo pacman -S obs-studio<br>sudo pacman -S kmplot #math tool, function images<br>sudo pacman -S musescore #free music score<br>sudo pacman -S xmind<span class="hljs-number">-2020</span> #xmind_zen#<br>sudo pacman -S freemind #free mindmap<br>sudo pacman -S google-chrome<br>sudo pacman -S git<br>sudo pacman -S kcolorchooser #pick color<br></code></pre></td></tr></table></figure><h3 id="KDE插件"><a href="#KDE插件" class="headerlink" title="KDE插件"></a>KDE插件</h3><p>UMenu, #launch pad papius,#icons</p><h3 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux"></a>Archlinux</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal">pacman -Qdt <span class="hljs-comment">#find package that are not need</span><br>sudo pacman -Rns <span class="hljs-variable">$(</span>pacman -Qdtq) <span class="hljs-comment">#删除不必要的依赖包</span><br></code></pre></td></tr></table></figure><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>今天，我在我的笔记本上卸载了manjaro，说实话，我觉得Windows和Linux之间，谁做我的主力桌面太难抉择了；我用Windows时想换成Linux，用Linux时又会觉得用起来很操蛋；于Linux而言，它有更好的软件包管理，运行所占用的资源更低，有更漂亮的界面，有着世界上最优秀的动画，（manjaro默认所用的KDE桌面我觉得是最好看的，尤其是换上苹方的字体之后）。2020年了，Linux还是老问题，作为桌面端他的软件生态太差了，而且bug也挺多的。现在换Windows了，Windows的缺点也蛮多的，字体几乎是不可换，界面丑陋，分辨率得不到统一，但是，我只想简单一点，主力系统Windows，（等以后有钱了一定买个mac），用个Linux的虚拟机。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>解决origin下载慢问题</title>
+    <link href="/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/"/>
+    <url>/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h2 id="解决origin下载慢问题"><a href="#解决origin下载慢问题" class="headerlink" title="解决origin下载慢问题"></a>解决origin下载慢问题</h2><p>最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。</p><h2 id="UsbEAm-hosts-Editor-v3-5"><a href="#UsbEAm-hosts-Editor-v3-5" class="headerlink" title="UsbEAm_hosts_Editor_v3.5"></a>UsbEAm_hosts_Editor_v3.5</h2><p><img src="/images/origin_speed/1.jpg" alt="avatar"></p><h2 id="可以直接测延迟然后选择"><a href="#可以直接测延迟然后选择" class="headerlink" title="可以直接测延迟然后选择"></a>可以直接测延迟然后选择</h2><p><img src="/images/origin_speed/2.jpg" alt="avatar"><br>之后如果不想用的话可以直接恢复默认hosts；<br>工具直接去原文链接下载</p><h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h3><p><a href="https://www.dogfight360.com/blog/">原文</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Technology</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>短学期计划</title>
+    <link href="/2020/06/20/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92/"/>
+    <url>/2020/06/20/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92/</url>
+    
+    <content type="html"><![CDATA[<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><ul><li>python基础学习</li><li>写博客</li><li>python简单抓包（抓取某网站图片）</li><li>python 对excel表格的处理</li><li>python中药专利抓取</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Life</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>School</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>macdock</title>
+    <link href="/2020/05/04/macdock/"/>
+    <url>/2020/05/04/macdock/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Mac设置启动台图标大小"><a href="#Mac设置启动台图标大小" class="headerlink" title="Mac设置启动台图标大小"></a>Mac设置启动台图标大小</h2><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/images/macdock.jpg" alt="avatar"></p><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-number">1</span>:调整为一列<span class="hljs-number">10</span>个<br>defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">columns</span> -<span class="hljs-type">int</span> <span class="hljs-number">10</span><br><span class="hljs-number">2</span>:调整行<br>defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">rows</span> -<span class="hljs-type">int</span> <span class="hljs-number">8</span><br>重置Launchpad<br>defaults <span class="hljs-keyword">write</span> com.apple.dock ResetLaunchPad -<span class="hljs-type">bool</span> <span class="hljs-keyword">TRUE</span><br>重启<br>killall Dock<br></code></pre></td></tr></table></figure><h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">columns</span> -<span class="hljs-type">int</span> <span class="hljs-number">10</span><br><br>defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">rows</span> -<span class="hljs-type">int</span> <span class="hljs-number">8</span><br><br>defaults <span class="hljs-keyword">write</span> com.apple.dock ResetLaunchPad -<span class="hljs-type">bool</span> <span class="hljs-keyword">TRUE</span><br><br>killall Dock<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hackintosh</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>最大化</title>
+    <link href="/2020/05/01/%E6%9C%80%E5%A4%A7%E5%8C%96/"/>
+    <url>/2020/05/01/%E6%9C%80%E5%A4%A7%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<h2 id="闻"><a href="#闻" class="headerlink" title="闻"></a>闻</h2><p>虚伪的文字我都不会写</p><p>赞颂的诗歌你都不会看</p><p>有人创造了光荣这个词</p><p>你错把它当成信仰</p><p>“我们的最高理想是实现共产主义”</p><p>如果褪去其政治色彩</p><p>这应该是全人类的愿望</p><p>我满心的疑惑</p><p>你还是丢掉了作为一个人应该有的优雅</p><p>转头迎接人们的不屑与偏见</p><p>诗人们的星空曾让你流连忘返</p><p>这一切一直穿插在你我的生活中</p><p>你还是误以为它们存在于另一个你所触碰不到的维度</p><p>作曲家的每一个小三和弦都曾让你落泪</p><p>你想注入你自己的情感再将其歌唱</p><p>早已被磨平的喉咙却只能发出嘶哑的声音</p><p>这一切你都归因于自己没有所谓的天赋</p><p>你知道吗，其实人类并不缺资源与钱</p><p>关键在于如何分配</p><p>为此，全世界的天才争论了数百年</p><p>你知道吗，每一颗骰子里都注满了水银</p><p>势必要将人们的恻隐之心浇灭</p><p>直到藐视规则的人将他们揭露</p><p>你知道吗，我们星球所受到的每一次伤害</p><p>都造就了一个家族的百年兴旺</p><p>可你仍践行于少开一天车的低碳生活</p><p>以为这样能让地球与人类的共存久一点</p><p>你知道吗，你所写下的每一个名字之上</p><p>都是一个个游走在法律间的带血的文字游戏</p><p>每一个标点符号都可以给你致命一击</p><h2 id="戾"><a href="#戾" class="headerlink" title="戾"></a>戾</h2><p>你也曾对我说</p><p>因为你的辛勤</p><p>这世界多了一辆价值连城的法拉利</p><p>她停靠在公园大道740号公寓旁</p><p>她如此之美</p><p>她的到来能使这个世界变得更加美好</p><p>可她的美丽我却无法欣赏</p><p>只依稀记得车牌号并不属于你</p><p>可你并不觉得遗憾</p><p>因为所有人都觉得理所当然</p><p>可我还是觉得她应该属于你</p><p>因为我暂时还是一个未被同化的理想主义者</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Thinking</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>思绪</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何求解n个数的最小公倍数</title>
+    <link href="/2020/02/16/thesma/"/>
+    <url>/2020/02/16/thesma/</url>
+    
+    <content type="html"><![CDATA[<h2 id="求解n个数字的最小公倍数"><a href="#求解n个数字的最小公倍数" class="headerlink" title="求解n个数字的最小公倍数"></a>求解n个数字的最小公倍数</h2><p>对于n个数字，可以先将这一串数字的初始值用数组存起来，然后复制一个数组。对于n个数字，每次找到最小的数，将最小的数字加上它的初始值，循环以上，直到所有的数字相等，就拿到了最小公倍数。</p><h3 id="判断所有数字相等的方法"><a href="#判断所有数字相等的方法" class="headerlink" title="判断所有数字相等的方法"></a>判断所有数字相等的方法</h3><ol><li>找出最大数与最小数，判断是否相等</li><li>定义一个用于判断的变量，其初始值设为零。然后循环中判断相邻数之间是否相等，相等则将用于判断的变量加一，不等则跳出循环。最后判断用于判断的变量的值是否满足n-1；</li><li>将数字排序后判断首和尾是否相等；</li></ol><h3 id="示例代码-c"><a href="#示例代码-c" class="headerlink" title="示例代码(c++)"></a>示例代码(c++)</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment">#include&lt;cstdio&gt;</span><br><span class="hljs-comment">#include&lt;iostream&gt;</span><br>using namespace std;<br>int main()<br>&#123;<br>int n;<br>int num[10001];<br>int num_copy[10001];<br>cin&gt;&gt;n;<br><span class="hljs-keyword">for</span>(int <span class="hljs-attribute">i</span>=0;i&lt;n;i++)&#123;<br>cin&gt;&gt;num[i];<br>num_copy[i]=num[i];<br>&#125;<br>int <span class="hljs-attribute">min</span>=num[0];<br>int <span class="hljs-attribute">k</span>=0;<br>int judge =0;<br><span class="hljs-keyword">while</span>(1)&#123;<br><span class="hljs-attribute">judge</span>=0;<br><span class="hljs-attribute">k</span>=0;<br><span class="hljs-attribute">min</span>=num[0];<br><span class="hljs-keyword">for</span>(int <span class="hljs-attribute">i</span>=0;i&lt;n-1;i++)&#123;<br><span class="hljs-keyword">if</span>(num[i]==num[i+1])&#123;<br>judge++;<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br>break;<br>&#125;<br>&#125;<br><span class="hljs-keyword">if</span>(<span class="hljs-attribute">judge</span>==n-1)&#123;<br>cout&lt;&lt;num[0];<br>break;<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br><br><span class="hljs-keyword">for</span>(int <span class="hljs-attribute">i</span>=1;i&lt;n;i++)&#123;<br><span class="hljs-keyword">if</span>(num[i]&lt;min)&#123;<br><span class="hljs-attribute">min</span>=num[i];<br><span class="hljs-attribute">k</span>=i;<br>&#125;<br>&#125;<br>num[k]+=num_copy[k];<br>&#125;<br>&#125;<br>return 0;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.matrix67.com/blog/archives/554">不用除法，如何求解n个数的最小公倍数</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>飞young电信校园网破解</title>
+    <link href="/2019/10/06/dianxinxiaoyuanwang/"/>
+    <url>/2019/10/06/dianxinxiaoyuanwang/</url>
+    
+    <content type="html"><![CDATA[<h2 id="作者硬件-非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点"><a href="#作者硬件-非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点" class="headerlink" title="作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)"></a>作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)</h2><ul><li>小米路由器4c</li><li>一台电脑，用于路由器管理界面的登录</li><li>手机一部，用于拨号</li></ul><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>路由器需支持mac地址克隆功能。如果你有两台路由器那操作方法会大大简化。不必一定自己有两台，如果你室友有或者隔壁室友有就可以。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>1：运营商是根据硬件mac地址和ip地址确定设备的，他们并不知道是何设备，他们只能确定这个设备有没有登录<br>2:因此我们利用自己的手机登录拨号，然后把路由器这个硬件伪装成我们已经登录的手机，就可以用路由器分享网络啦</p><h2 id="一台路由器的操作（不推荐）"><a href="#一台路由器的操作（不推荐）" class="headerlink" title="一台路由器的操作（不推荐）"></a>一台路由器的操作（不推荐）</h2><p>1：首先利用运营商的方法，将网线插在路由器的lan(局域网)口，手机连接wifi，拨号，ok，可以上网了<br>2:记录下你手机的mac地址，wifi的ip地址，子网掩码，以及DNS，网关。(此时ip地址是运营商分配的地址，100开头，子网掩码一定只有两个225，网关也是100开头)ip地址192开头就是路由器分配的，因此此时你打开路由器管理界面应该是打不开的<br>3：记录好这一些后，关闭路由器，拔出网线，打开路由器，电脑连接后进入管理界面。<br>4：打开路由器上网设置，将路由器上网改为静态ip；此时你就可以填你刚才所记录的那些东西了。<br>5：填好之后，找到mac地址克隆；填入手机mac地址，然后克隆。<br>6：最后将网线插入wan口（广域网），最后就可以上网了。</p><h2 id="多台路由器的操作（简单）"><a href="#多台路由器的操作（简单）" class="headerlink" title="多台路由器的操作（简单）"></a>多台路由器的操作（简单）</h2><h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>对于多台路由器，第一次搞好后就差不多结束了。因为断电后ip会刷新一遍，所以你每天的工作只需拿出手机，登录宽带，断开手机的连接，打开自己的路由器就可以用了。设想另一台路由器是你室友的，并且也是用的电信的宽带。</p><h3 id="第一次操作"><a href="#第一次操作" class="headerlink" title="第一次操作"></a>第一次操作</h3><p>1.拿出你的手机，记录下手机的mac地址。<br>2.断开你路由器的所有网线连接，再开启路由器，用电脑登录路由器管理界面，上网方式改为dhcp（默认就是DHCP）；选择mac地址克隆，将手机的mac地址填入。<br>3.手机连接你室友的WiFi，并打开飞young登录，登录成功后将网线连接到路由器的wan口（广域网），一般来说，此时路由器应该是可以上网了，如果可以了，手机<strong>必须要断开室友的WiFi</strong>，手机此时可以连接自己的路由器上网。<br>5.路由器能上网后，手机不能连接室友的WiFi，一旦连接就得重来！！！</p><h3 id="以后的每天"><a href="#以后的每天" class="headerlink" title="以后的每天"></a>以后的每天</h3><p>1.拔出路由器电源线，手机连接室友WiFi并登录，插入路由器电源线，手机断开室友的WiFi，结束。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Technology</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>IOS描述文件分享</title>
+    <link href="/2019/10/01/ios13beta/"/>
+    <url>/2019/10/01/ios13beta/</url>
+    
+    <content type="html"><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本页面用于放一些ios描述文件</p><h2 id="IOS13升级beta版本"><a href="#IOS13升级beta版本" class="headerlink" title="IOS13升级beta版本"></a>IOS13升级beta版本</h2><p><a href="http://iantang.gitee.io/blog/page/001/iOS_iPadOS_13_Beta_Profile.mobileconfig">ios13升级bata版本</a></p><h2 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Technology</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2019/01/09/hello-world/"/>
+    <url>/2019/01/09/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>

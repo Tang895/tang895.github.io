@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="TangYijun">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="manjaro-install设置国内源$sudo pacman-mirrors-i -c China -m rank 编辑archlinuxcnsudo nano &#x2F;etc&#x2F;pacman.conf 添加以下代码 12[archlinuxcn]Siglevel &#x3D; Optional TrustedOnlyServer &#x3D; https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="manjaro_install">
+<meta property="og:url" content="http://tang895.github.io/2020/07/21/manjaro-install/index.html">
+<meta property="og:site_name" content="TangYijun&#39;s Blog">
+<meta property="og:description" content="manjaro-install设置国内源$sudo pacman-mirrors-i -c China -m rank 编辑archlinuxcnsudo nano &#x2F;etc&#x2F;pacman.conf 添加以下代码 12[archlinuxcn]Siglevel &#x3D; Optional TrustedOnlyServer &#x3D; https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://tang895.github.io/images/manjaro/manjaro_logo.jpg">
+<meta property="article:published_time" content="2020-07-21T10:59:23.000Z">
+<meta property="article:modified_time" content="2022-07-08T07:30:51.000Z">
+<meta property="article:author" content="TangYijun">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://tang895.github.io/images/manjaro/manjaro_logo.jpg">
+  
+  
+  
+  <title>manjaro_install - TangYijun&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"tang895.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":90,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>TangYijun&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="manjaro_install"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-07-21 18:59" pubdate>
+          2020年7月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">manjaro_install</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="manjaro-install"><a href="#manjaro-install" class="headerlink" title="manjaro-install"></a>manjaro-install</h1><h2 id="设置国内源"><a href="#设置国内源" class="headerlink" title="设置国内源"></a>设置国内源</h2><p><code>$sudo pacman-mirrors-i -c China -m rank</code></p>
+<h3 id="编辑archlinuxcn"><a href="#编辑archlinuxcn" class="headerlink" title="编辑archlinuxcn"></a>编辑archlinuxcn</h3><p><code>sudo nano /etc/pacman.conf</code></p>
+<p>添加以下代码</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[archlinuxcn]</span><span class="hljs-attr">Siglevel</span> = Optional TrustedOnly<br><span class="hljs-attr">Server</span> = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure>
+
+<p>或者这个</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[archlinuxcn]</span><span class="hljs-attr">SigLevel</span> = Optional TrustedOnly<br><span class="hljs-attr">Server</span> = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="导入密钥"><a href="#导入密钥" class="headerlink" title="导入密钥"></a>导入密钥</h3><p>先升级 <code>sudo pacman -Syy</code></p>
+<p>再导入密钥 <code>sudo pacman -S archlinuxcn-keyring</code></p>
+<p>或者直接 <code>sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></p>
+<h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><h3 id="安装输入法"><a href="#安装输入法" class="headerlink" title="安装输入法"></a>安装输入法</h3><p><code>sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin</code> </p>
+<h4 id="配置输入法"><a href="#配置输入法" class="headerlink" title="配置输入法"></a>配置输入法</h4><p>编辑 <code>sudo nano /etc/enviroment</code></p>
+<p>在文件内写入三行</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">GTK_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">QT_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">XMODIFIERS</span>=<span class="hljs-string">&quot;@im=fcitx&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>重启生效 </p>
+<h2 id="中文输入法二，fcitx5"><a href="#中文输入法二，fcitx5" class="headerlink" title="中文输入法二，fcitx5"></a>中文输入法二，fcitx5</h2><h4 id="卸载之前的fcitx"><a href="#卸载之前的fcitx" class="headerlink" title="卸载之前的fcitx"></a>卸载之前的fcitx</h4><p><code>sudo pacman -Rc fcitx</code></p>
+<h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><p><code>sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk kcm-fcitx5</code> 编辑 <code>sudo nano /etc/enviroment</code></p>
+<p>在文件内写入三行</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">GTK_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">QT_IM_MODULE</span>=fcitx<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">XMODIFIERS</span>=<span class="hljs-string">&quot;@im=fcitx&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>start</p>
+<p><code>fcitx5</code></p>
+<p>add auto start</p>
+<p><code>sudo cp /usr/share/applications/fcitx5.desktop /etc/xdg/autostart/</code></p>
+<h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><p><code>reboot</code> </p>
+<h2 id="网易云音乐中文输入"><a href="#网易云音乐中文输入" class="headerlink" title="网易云音乐中文输入"></a>网易云音乐中文输入</h2><p>安装vlc（一般都有自带），修改文件。&#x2F;usr&#x2F;share&#x2F;applications&#x2F;netease-cloud-music.desktop, 在文件中修改Exec&#x3D;&#x2F;opt&#x2F;netease&#x2F;netease-cloud-music&#x2F;netease-cloud-music %U</p>
+<h2 id="plasma运行deepin-wine程序"><a href="#plasma运行deepin-wine程序" class="headerlink" title="plasma运行deepin wine程序"></a>plasma运行deepin wine程序</h2><p>主要是运行QQ和TIM程序</p>
+<p>首先安装gnome-settings-daemon这个包，然后将&#x2F;etc&#x2F;xdg&#x2F;autostart&#x2F;org.gnome.SettingsDaemon.XSettings.desktop复制到~&#x2F;.config&#x2F;autostart&#x2F;</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo pacman -S gnome-settings-daemon<br>sudo cp <span class="hljs-regexp">/etc/</span>xdg<span class="hljs-regexp">/autostart/</span>org.gnome.SettingsDaemon.XSettings.desktop ~<span class="hljs-regexp">/.config/</span>autostart/<br></code></pre></td></tr></table></figure>
+
+<p>最后去系统设置-&gt;开机和关机-&gt;启动，把里面的gnome setting打上勾，打勾后点击高级，将“只在plasma中自动启动勾上”如下图：</p>
+<p><img src="/images/manjaro/1.jpg" srcset="/img/loading.gif" lazyload alt="/images/manjaro/1.jpg"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h3><p>系统字体：苹方-bold</p>
+<p>代码字体：SF-MONO </p>
+<h3 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs clean">sudo pacman -S go #the go language<br>sudo pacman -S qv2ray<br>sudo pacman -S telegram-desktop<br>sudo pacman -S golandsudo pacman -S clion<br>sudo pacman -S pycharm-community-edition<br>sudo pacman -S visual-studio-<span class="hljs-keyword">code</span>-bin<br>sudo pacman -S cantor # math<br>sudo pacman -S kalgebra # math<br>sudo pacman -S libreoffice-fresh libreoffice-fresh-zh-cn<br>sudo pacman -S ttf-wps-fonts wps-office<br>sudo pacman -S krita #photoshop<br>sudo pacman -S gimp #photoshop<br>sudo pacman -S minuet #chords_learning<br>sudo pacman -S atom<br>sudo pacman -S cuttlefish #icons for developers<br>sudo pacman -S flameshot #screenshot<br>sudo pacman -S ardour #music_creator<br>sudo pacman -S gestures #enable gestures<br>sudo pacman -S fish zsh #good shell<br>sudo pacman -S clang #C language<br>sudo pacman -S jdk11-openjdk #java<br>sudo pacman -S cmake<br>sudo pacman -S kdenlive #the video clip<br>sudo pacman -S obs-studio<br>sudo pacman -S kmplot #math tool, function images<br>sudo pacman -S musescore #free music score<br>sudo pacman -S xmind<span class="hljs-number">-2020</span> #xmind_zen#<br>sudo pacman -S freemind #free mindmap<br>sudo pacman -S google-chrome<br>sudo pacman -S git<br>sudo pacman -S kcolorchooser #pick color<br></code></pre></td></tr></table></figure>
+
+<h3 id="KDE插件"><a href="#KDE插件" class="headerlink" title="KDE插件"></a>KDE插件</h3><p>UMenu, #launch pad papius,#icons</p>
+<h3 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux"></a>Archlinux</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal">pacman -Qdt <span class="hljs-comment">#find package that are not need</span><br>sudo pacman -Rns <span class="hljs-variable">$(</span>pacman -Qdtq) <span class="hljs-comment">#删除不必要的依赖包</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>今天，我在我的笔记本上卸载了manjaro，说实话，我觉得Windows和Linux之间，谁做我的主力桌面太难抉择了；我用Windows时想换成Linux，用Linux时又会觉得用起来很操蛋；于Linux而言，它有更好的软件包管理，运行所占用的资源更低，有更漂亮的界面，有着世界上最优秀的动画，（manjaro默认所用的KDE桌面我觉得是最好看的，尤其是换上苹方的字体之后）。2020年了，Linux还是老问题，作为桌面端他的软件生态太差了，而且bug也挺多的。现在换Windows了，Windows的缺点也蛮多的，字体几乎是不可换，界面丑陋，分辨率得不到统一，但是，我只想简单一点，主力系统Windows，（等以后有钱了一定买个mac），用个Linux的虚拟机。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Computer/" class="category-chain-item">Computer</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>manjaro_install</div>
+      <div>http://tang895.github.io/2020/07/21/manjaro-install/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>TangYijun</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年7月21日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/07/test/" title="test">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">test</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/20/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/" title="解决origin下载慢问题">
+                        <span class="hidden-mobile">解决origin下载慢问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
