@@ -16,24 +16,24 @@
   <meta name="author" content="TangYijun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Mac设置启动台图标大小效果  命令123456781:调整为一列10个defaults write com.apple.dock springboard-columns -int 102:调整行defaults write com.apple.dock springboard-rows -int 8重置Launchpaddefaults write com.apple.dock ResetLau">
+    <meta name="description" content="Linux汇编-笔记-NASM打印Hello world1234567891011121314section .rodata    hello_world db &quot;hello world&quot;, 0x0a ;0x0a代表结束符        hello_world_len equ $ - hello_world ;长度，需要一个buffersection .text    glob">
 <meta property="og:type" content="article">
-<meta property="og:title" content="macdock">
-<meta property="og:url" content="http://tang895.github.io/2020/05/04/macdock/index.html">
+<meta property="og:title" content="linux-assembly-tutorial-nasm">
+<meta property="og:url" content="http://tang895.github.io/2023/04/23/linux-assembly-tutorial-nasm/index.html">
 <meta property="og:site_name" content="TangYijun&#39;s Blog">
-<meta property="og:description" content="Mac设置启动台图标大小效果  命令123456781:调整为一列10个defaults write com.apple.dock springboard-columns -int 102:调整行defaults write com.apple.dock springboard-rows -int 8重置Launchpaddefaults write com.apple.dock ResetLau">
+<meta property="og:description" content="Linux汇编-笔记-NASM打印Hello world1234567891011121314section .rodata    hello_world db &quot;hello world&quot;, 0x0a ;0x0a代表结束符        hello_world_len equ $ - hello_world ;长度，需要一个buffersection .text    glob">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://tang895.github.io/images/macdock.jpg">
-<meta property="article:published_time" content="2020-05-04T05:25:16.000Z">
-<meta property="article:modified_time" content="2023-04-22T16:36:34.668Z">
+<meta property="og:image" content="http://tang895.github.io/images/default1.png">
+<meta property="article:published_time" content="2023-04-23T06:30:11.000Z">
+<meta property="article:modified_time" content="2023-04-23T07:05:41.432Z">
 <meta property="article:author" content="TangYijun">
-<meta property="article:tag" content="Hackintosh">
+<meta property="article:tag" content="assembly">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://tang895.github.io/images/macdock.jpg">
+<meta name="twitter:image" content="http://tang895.github.io/images/default1.png">
   
   
   
-  <title>macdock - TangYijun&#39;s Blog</title>
+  <title>linux-assembly-tutorial-nasm - TangYijun&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="macdock"></span>
+            <span id="subtitle" data-typed-text="linux-assembly-tutorial-nasm"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-05-04 13:25" pubdate>
-          2020年5月4日 下午
+        <time datetime="2023-04-23 14:30" pubdate>
+          2023年4月23日 下午
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          385 字
+          790 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          4 分钟
+          7 分钟
         
       </span>
     
@@ -270,16 +270,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">macdock</h1>
+            <h1 style="display: none">linux-assembly-tutorial-nasm</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Mac设置启动台图标大小"><a href="#Mac设置启动台图标大小" class="headerlink" title="Mac设置启动台图标大小"></a>Mac设置启动台图标大小</h2><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3>
+                <h3 id="Linux汇编-笔记-NASM"><a href="#Linux汇编-笔记-NASM" class="headerlink" title="Linux汇编-笔记-NASM"></a>Linux汇编-笔记-NASM</h3><h4 id="打印Hello-world"><a href="#打印Hello-world" class="headerlink" title="打印Hello world"></a>打印Hello world</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs nasm">section .rodata<br>    hello_world db &quot;hello world&quot;, 0x0a ;0x0a代表结束符    <br>    hello_world_len equ $ - hello_world ;长度，需要一个buffer<br>section .text<br>    global _start<br>    _start:<br>        mov eax, 4  ;4代表sys_write<br>        mov ebx, 1  ;1代表std_out, 0代表stdin 2代表stderr<br>        mov ecx, hello_world<br>        mov edx, hello_world_len<br>        int 0x80  ;代表syswrite这个调用终止        <br>        mov eax, 1 ;代表sys_exit<br>        mov ebx, 0 ; 同上面的ebx<br>        int 0x80 ;调用终止，程序退出<br></code></pre></td></tr></table></figure>
 
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-number">1</span>:调整为一列<span class="hljs-number">10</span>个<br>defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">columns</span> -<span class="hljs-type">int</span> <span class="hljs-number">10</span><br><span class="hljs-number">2</span>:调整行<br>defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">rows</span> -<span class="hljs-type">int</span> <span class="hljs-number">8</span><br>重置Launchpad<br>defaults <span class="hljs-keyword">write</span> com.apple.dock ResetLaunchPad -<span class="hljs-type">bool</span> <span class="hljs-keyword">TRUE</span><br>重启<br>killall Dock<br></code></pre></td></tr></table></figure>
+<p>GNU的ld链接器默认入口符号是<code>_start</code>并且要将其设置为全局符号，用其他符号在链接时，使用<code>ld -e </code>指定。</p>
+<p>这里没有用到寄存器，因为是直接通过系统内核将hello world打印出来，没有调用系统函数printf，其中，用到了四个寄存器传参，他们的赋值顺序可以颠倒。</p>
+<p>Linux系统调用号：</p>
+<img src="/2023/04/23/linux-assembly-tutorial-nasm/2023-04-23-14-38-28-image.png" srcset="/img/loading.gif" lazyload class="">
 
-<h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">columns</span> -<span class="hljs-type">int</span> <span class="hljs-number">10</span><br><br>defaults <span class="hljs-keyword">write</span> com.apple.dock springboard-<span class="hljs-keyword">rows</span> -<span class="hljs-type">int</span> <span class="hljs-number">8</span><br><br>defaults <span class="hljs-keyword">write</span> com.apple.dock ResetLaunchPad -<span class="hljs-type">bool</span> <span class="hljs-keyword">TRUE</span><br><br>killall Dock<br></code></pre></td></tr></table></figure>
+<h3 id="编译链接方法"><a href="#编译链接方法" class="headerlink" title="编译链接方法"></a>编译链接方法</h3><p>这里是采用nasm+intel语法写的，因此使用nasm编译，ld链接</p>
+<p>因32位比较特殊，64位比较简单。这里以32位举例</p>
+<p>编译： <code>nasm -f elf32 xxx.asm</code> </p>
+<p>链接： <code>ld -m elf_i386 xxx.o -o xxx.out</code> </p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a target="_blank" rel="noopener" href="https://shuai.guru/2023-01-31-x86-64-hello-world/">在 Linux 上用 x86-64 汇编语言写 Hello World 程序（上） | 郭帅的个人博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/luhao19980909/article/details/103691295">linux汇编知识总结(GAS和NASM汇编)_gas 汇编_鱼日天的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/cirosantilli/x86-assembly-cheat">GitHub-https：&#x2F;&#x2F;github.com&#x2F;cirosantilli&#x2F;arm-assembly-cheat</a></p>
 
                 
               </div>
@@ -298,7 +307,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Computer/" class="category-chain-item">Computer</a>
+  <a href="/categories/assembly/" class="category-chain-item">assembly</a>
   
   
 
@@ -313,7 +322,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hackintosh/">#Hackintosh</a>
+        <a href="/tags/assembly/">#assembly</a>
       
     </div>
   
@@ -325,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>macdock</div>
-      <div>http://tang895.github.io/2020/05/04/macdock/</div>
+      <div>linux-assembly-tutorial-nasm</div>
+      <div>http://tang895.github.io/2023/04/23/linux-assembly-tutorial-nasm/</div>
     </div>
     <div class="license-meta">
       
@@ -338,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年5月4日</div>
+          <div>2023年4月23日</div>
         </div>
       
       
@@ -368,9 +377,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/06/20/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92/" title="短学期计划">
+                      <a href="/2023/04/23/linux-assembly-tutorial-att/" title="linux-assembly-tutorial-att">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">短学期计划</span>
+                        <span class="hidden-mobile">linux-assembly-tutorial-att</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -378,8 +387,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/05/01/%E6%9C%80%E5%A4%A7%E5%8C%96/" title="最大化">
-                        <span class="hidden-mobile">最大化</span>
+                      <a href="/2023/04/22/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85/" title="记一次manjaro中edb-debugger的安装">
+                        <span class="hidden-mobile">记一次manjaro中edb-debugger的安装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
