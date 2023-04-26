@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>记录一次manjaro设置休眠的过程</title>
+    <link href="/2023/04/27/manjaro-sleep/"/>
+    <url>/2023/04/27/manjaro-sleep/</url>
+    
+    <content type="html"><![CDATA[<h2 id="manjaro-休眠"><a href="#manjaro-休眠" class="headerlink" title="manjaro 休眠"></a>manjaro 休眠</h2><p>manjaro安装之后，默认没有交换空间，不能休眠。</p><h3 id="设置交换空间"><a href="#设置交换空间" class="headerlink" title="设置交换空间"></a>设置交换空间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#这里的路径以/mnt为例，即pwd = /mnt</span><br><span class="hljs-comment"># 分配空间，8GB,根据自己电脑修改</span><br>sudo fallocate -l 8G swapfile<br><span class="hljs-comment"># 设置权限</span><br>sudo <span class="hljs-built_in">chmod</span> 600 swapfile<br><span class="hljs-comment"># 设置交换区</span><br>sudo mkswap swapfile<br><span class="hljs-comment"># 启用</span><br>sudo swapon swapfile<br><br><span class="hljs-comment">#关闭方法</span><br><span class="hljs-comment"># sudo swapoff swapfile</span><br><span class="hljs-comment">#添加到自启动-直接用命令</span><br>sh -c <span class="hljs-string">&#x27;echo &quot;/mnt/swapfile none swap defaults 0 0&quot; &gt;&gt; /etc/fstab&#x27;</span><br><span class="hljs-comment">#其实就是编辑/etc/fstab</span><br><br></code></pre></td></tr></table></figure><p>cat &#x2F;etc&#x2F;fstab 如下：</p><img src="/2023/04/27/manjaro-sleep/2023-04-27-00-21-27-image.png" class=""><h3 id="查询UUID"><a href="#查询UUID" class="headerlink" title="查询UUID"></a>查询UUID</h3><p><code>sudo lsblk -f</code></p><p>记录交换空间盘的UUID</p><h3 id="查询swapfile偏移"><a href="#查询swapfile偏移" class="headerlink" title="查询swapfile偏移"></a>查询swapfile偏移</h3><p><code>sudo filefrag -v /mnt/swapfile</code></p><p>得到的第一行就是偏移。</p><img src="/2023/04/27/manjaro-sleep/2023-04-27-00-25-23-image.png" class=""><h3 id="修改grub文件"><a href="#修改grub文件" class="headerlink" title="修改grub文件"></a>修改grub文件</h3><p>文件地址：<code>etc/default/grub</code></p><p>添加刚刚的UUID和偏移</p><p>在GRUB_CMDLINE_LINUX_DEFAULT  后面添加resume &#x3D; UUID resume_offset&#x3D;Offset</p><p>UUID，和Offset是刚刚查询得到的值。</p><p>如图所示：</p><img src="/2023/04/27/manjaro-sleep/2023-04-27-00-29-17-image.png" class=""><h3 id="添加resume钩子"><a href="#添加resume钩子" class="headerlink" title="添加resume钩子"></a>添加resume钩子</h3><p>编辑<code>etc/mkinitcpio.conf</code>  找到HOOKS那一栏。</p><p>原值一般为：<code>HOOKS = &quot;base udev autodetect xxx xxx xxx xxx .....&quot;</code></p><p>将resume添加进去，添加在<code>udev</code> 和 <code>autodetect</code>的中间（不知道顺序有没有影响，看大佬们的文章都是添加到这两个中间，照抄总没错）</p><p>新值：<code>HOOKS = &quot;base udev resume autodetect xxx xxx xxx.....&quot;</code></p><h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><p>最后：重新生成grub引导，重新生成initramfs镜像</p><p><code>sudo update-grub</code></p><p><code>sudo mkinitcpio -P</code></p><p>重启，结束。</p><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://blog.csdn.net/qq_41175204/article/details/96423134">manjaro休眠功能修复_manjaro 无法休眠_宇哥721的博客-CSDN博客</a></p><p><a href="https://www.haotian22.top/ca16b1d8.html">Arch&#x2F;Manjaro启用休眠教程 | Hao_Tian的折腾日志</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>linux-manjaro下最好用的词典软件</title>
     <link href="/2023/04/23/linux-dictionary/"/>
     <url>/2023/04/23/linux-dictionary/</url>
