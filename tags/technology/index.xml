@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Technology on TangYijun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/technology.html</link>
+    <description>Recent content in Technology on TangYijun&#39;s Blog</description>
+    <image>
+      <title>TangYijun&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Jul 2020 12:06:47 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决origin下载慢问题</title>
+      <link>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
+      <pubDate>Mon, 20 Jul 2020 12:06:47 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
+      <description>&lt;h2 id=&#34;解决origin下载慢问题&#34;&gt;解决origin下载慢问题&lt;/h2&gt;
+&lt;p&gt;最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。&lt;/p&gt;
+&lt;h2 id=&#34;usbeam_hosts_editor_v35&#34;&gt;UsbEAm_hosts_Editor_v3.5&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;avatar&#34; loading=&#34;lazy&#34; src=&#34;assets/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/1.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;可以直接测延迟然后选择&#34;&gt;可以直接测延迟然后选择&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;avatar&#34; loading=&#34;lazy&#34; src=&#34;assets/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/2.jpg&#34;&gt;
+之后如果不想用的话可以直接恢复默认hosts；
+工具直接去原文链接下载&lt;/p&gt;
+&lt;h3 id=&#34;原文链接&#34;&gt;原文链接&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dogfight360.com/blog/&#34;&gt;原文&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>飞young电信校园网破解</title>
+      <link>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</guid>
+      <description>&lt;h2 id=&#34;作者硬件非必需例如不用电脑也可以登录路由器管理界面只是电脑要好用一点&#34;&gt;作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;小米路由器4c&lt;/li&gt;
+&lt;li&gt;一台电脑，用于路由器管理界面的登录&lt;/li&gt;
+&lt;li&gt;手机一部，用于拨号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+&lt;p&gt;路由器需支持mac地址克隆功能。如果你有两台路由器那操作方法会大大简化。不必一定自己有两台，如果你室友有或者隔壁室友有就可以。&lt;/p&gt;
+&lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
+&lt;p&gt;1：运营商是根据硬件mac地址和ip地址确定设备的，他们并不知道是何设备，他们只能确定这个设备有没有登录
+2:因此我们利用自己的手机登录拨号，然后把路由器这个硬件伪装成我们已经登录的手机，就可以用路由器分享网络啦&lt;/p&gt;
+&lt;h2 id=&#34;一台路由器的操作不推荐&#34;&gt;一台路由器的操作（不推荐）&lt;/h2&gt;
+&lt;p&gt;1：首先利用运营商的方法，将网线插在路由器的lan(局域网)口，手机连接wifi，拨号，ok，可以上网了
+2:记录下你手机的mac地址，wifi的ip地址，子网掩码，以及DNS，网关。(此时ip地址是运营商分配的地址，100开头，子网掩码一定只有两个225，网关也是100开头)ip地址192开头就是路由器分配的，因此此时你打开路由器管理界面应该是打不开的
+3：记录好这一些后，关闭路由器，拔出网线，打开路由器，电脑连接后进入管理界面。
+4：打开路由器上网设置，将路由器上网改为静态ip；此时你就可以填你刚才所记录的那些东西了。
+5：填好之后，找到mac地址克隆；填入手机mac地址，然后克隆。
+6：最后将网线插入wan口（广域网），最后就可以上网了。&lt;/p&gt;
+&lt;h2 id=&#34;多台路由器的操作简单&#34;&gt;多台路由器的操作（简单）&lt;/h2&gt;
+&lt;h3 id=&#34;说明-1&#34;&gt;说明&lt;/h3&gt;
+&lt;p&gt;对于多台路由器，第一次搞好后就差不多结束了。因为断电后ip会刷新一遍，所以你每天的工作只需拿出手机，登录宽带，断开手机的连接，打开自己的路由器就可以用了。设想另一台路由器是你室友的，并且也是用的电信的宽带。&lt;/p&gt;
+&lt;h3 id=&#34;第一次操作&#34;&gt;第一次操作&lt;/h3&gt;
+&lt;p&gt;1.拿出你的手机，记录下手机的mac地址。
+2.断开你路由器的所有网线连接，再开启路由器，用电脑登录路由器管理界面，上网方式改为dhcp（默认就是DHCP）；选择mac地址克隆，将手机的mac地址填入。
+3.手机连接你室友的WiFi，并打开飞young登录，登录成功后将网线连接到路由器的wan口（广域网），一般来说，此时路由器应该是可以上网了，如果可以了，手机&lt;strong&gt;必须要断开室友的WiFi&lt;/strong&gt;，手机此时可以连接自己的路由器上网。
+5.路由器能上网后，手机不能连接室友的WiFi，一旦连接就得重来！！！&lt;/p&gt;
+&lt;h3 id=&#34;以后的每天&#34;&gt;以后的每天&lt;/h3&gt;
+&lt;p&gt;1.拔出路由器电源线，手机连接室友WiFi并登录，插入路由器电源线，手机断开室友的WiFi，结束。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IOS描述文件分享</title>
+      <link>http://localhost:1313/posts/2019/ios13beta.html</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2019/ios13beta.html</guid>
+      <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+&lt;p&gt;本页面用于放一些ios描述文件&lt;/p&gt;
+&lt;h2 id=&#34;ios13升级beta版本&#34;&gt;IOS13升级beta版本&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://iantang.gitee.io/blog/page/001/iOS_iPadOS_13_Beta_Profile.mobileconfig&#34;&gt;ios13升级bata版本&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;持续更新&#34;&gt;持续更新&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

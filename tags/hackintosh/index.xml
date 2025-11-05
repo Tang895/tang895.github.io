@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hackintosh on TangYijun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/hackintosh.html</link>
+    <description>Recent content in Hackintosh on TangYijun&#39;s Blog</description>
+    <image>
+      <title>TangYijun&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 May 2020 13:25:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hackintosh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macdock</title>
+      <link>http://localhost:1313/posts/2020/macdock.html</link>
+      <pubDate>Mon, 04 May 2020 13:25:16 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2020/macdock.html</guid>
+      <description>&lt;h2 id=&#34;mac设置启动台图标大小&#34;&gt;Mac设置启动台图标大小&lt;/h2&gt;
+&lt;h3 id=&#34;效果&#34;&gt;效果&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;avatar&#34; loading=&#34;lazy&#34; src=&#34;assets/macdock/macdock.jpg&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;命令&#34;&gt;命令&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1:调整为一列10个
+defaults write com.apple.dock springboard-columns -int 10
+2:调整行
+defaults write com.apple.dock springboard-rows -int 8
+重置Launchpad
+defaults write com.apple.dock ResetLaunchPad -bool TRUE
+重启
+killall Dock
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;copy&#34;&gt;Copy&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;defaults write com.apple.dock springboard-columns -int 10
+
+defaults write com.apple.dock springboard-rows -int 8
+
+defaults write com.apple.dock ResetLaunchPad -bool TRUE
+
+killall Dock
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

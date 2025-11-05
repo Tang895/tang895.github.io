@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>未分类 on TangYijun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E7%B1%BB.html</link>
+    <description>Recent content in 未分类 on TangYijun&#39;s Blog</description>
+    <image>
+      <title>TangYijun&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Apr 2023 15:45:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux-manjaro下最好用的词典软件</title>
+      <link>http://localhost:1313/posts/2023/linux-dictionary.html</link>
+      <pubDate>Sun, 23 Apr 2023 15:45:11 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023/linux-dictionary.html</guid>
+      <description>&lt;h2 id=&#34;linux-manjaro下最好用的词典软件&#34;&gt;linux-manjaro下最好用的词典软件&lt;/h2&gt;
+&lt;p&gt;Linux下面有一个软件叫stardict，星际译王，在阅读pdf时，选中文字，就可以查询。但是在manjaro用起来会有很多问题。manjaro下，有一个代替的叫qstardict，可以直接pacman安装。打开软件什么都没有。&lt;/p&gt;
+&lt;p&gt;需要自己下载stardict的字典，首先需要设置stardict的字典路径：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./assets/linux-dictionary/2023-04-23-15-49-19-image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击之后，将stardict的路径全部删除，因为并不需要安装stardict，改为一个普通用户能访问的路径。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/linux-dictionary/2023-04-23-15-50-04-image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后，去下载stardict的字典，网址：&lt;a href=&#34;http://download.huzheng.org/zh_CN/&#34;&gt;zh_CN 简体中文词典&lt;/a&gt;，将字典解压放在路径下面。&lt;/p&gt;
+&lt;p&gt;就有了字典。QStarDict设置里面的弹出窗口，可以自己设置，有选中文字直接弹出字典，选中文字按下快捷键弹出字典。以下是我自己的设置，选中文字按下快捷键弹出字典，默认Ctrl+T，因为Ctrl+T和firefox快捷键冲突。我设置了Ctrl+`&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/linux-dictionary/2023-04-23-15-55-45-image.png&#34;&gt;语音需要安装festival-us&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大文件的优雅分享</title>
+      <link>http://localhost:1313/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</link>
+      <pubDate>Thu, 22 Sep 2022 16:49:07 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</guid>
+      <description>&lt;h2 id=&#34;大文件优雅分享&#34;&gt;大文件优雅分享&lt;/h2&gt;
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;p&gt;学校上网课的时候，或者平时上课，都会遇见老师要传文件给学生的情况，很多时候都是小文件，这时候用网盘、QQ等IM软件非常简单，但有些时候需要用到大文件的分享，尤其是虚拟机，文件大。
+IM软件分享需要会员，速度也不快，网盘需要会员才能加速下载。有的人还会把文件分卷压缩之后再传，简直就是找骂。&lt;/p&gt;
+&lt;h3 id=&#34;去中心化&#34;&gt;去中心化&lt;/h3&gt;
+&lt;p&gt;其实这时候使用去中心化的分享方法刚好可以解决需求，分享文件速度快，不占用带宽。人越多，越快。这里推荐一个软件&amp;mdash;&amp;ndash;btsync，下载地址&lt;a href=&#34;https://www.resilio.com/platforms/desktop/&#34;&gt;resilio btsync下载&lt;/a&gt;
+无需注册，就可以使用。分享的时候，将key给别人就行了。听说创始人也是种子下载的创始人。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>test</title>
+      <link>http://localhost:1313/posts/2022/test.html</link>
+      <pubDate>Thu, 07 Jul 2022 22:26:21 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2022/test.html</guid>
+      <description>&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;
+&lt;p&gt;yes,this is a test page&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

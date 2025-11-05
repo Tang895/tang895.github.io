@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on TangYijun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/linux.html</link>
+    <description>Recent content in Linux on TangYijun&#39;s Blog</description>
+    <image>
+      <title>TangYijun&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Apr 2023 00:12:29 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一次manjaro设置休眠的过程</title>
+      <link>http://localhost:1313/posts/2023/manjaro-sleep.html</link>
+      <pubDate>Thu, 27 Apr 2023 00:12:29 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023/manjaro-sleep.html</guid>
+      <description>&lt;h2 id=&#34;manjaro-休眠&#34;&gt;manjaro 休眠&lt;/h2&gt;
+&lt;p&gt;manjaro安装之后，默认没有交换空间，不能休眠。&lt;/p&gt;
+&lt;h3 id=&#34;设置交换空间&#34;&gt;设置交换空间&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#这里的路径以/mnt为例，即pwd = /mnt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 分配空间，8GB,根据自己电脑修改&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fallocate -l 8G swapfile
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置权限&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt; swapfile
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置交换区&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkswap swapfile
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 启用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo swapon swapfile
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#关闭方法&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# sudo swapoff swapfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#添加到自启动-直接用命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;echo &amp;#34;/mnt/swapfile none swap defaults 0 0&amp;#34; &amp;gt;&amp;gt; /etc/fstab&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#其实就是编辑/etc/fstab&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;cat /etc/fstab 如下：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/manjaro-sleep/2023-04-27-00-21-27-image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;查询uuid&#34;&gt;查询UUID&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo lsblk -f&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;记录交换空间盘的UUID&lt;/p&gt;
+&lt;h3 id=&#34;查询swapfile偏移&#34;&gt;查询swapfile偏移&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo filefrag -v /mnt/swapfile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;得到的第一行就是偏移。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/manjaro-sleep/2023-04-27-00-25-23-image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改grub文件&#34;&gt;修改grub文件&lt;/h3&gt;
+&lt;p&gt;文件地址：&lt;code&gt;etc/default/grub&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加刚刚的UUID和偏移&lt;/p&gt;
+&lt;p&gt;在GRUB_CMDLINE_LINUX_DEFAULT  后面添加resume = UUID resume_offset=Offset&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>记一次manjaro中edb-debugger的安装</title>
+      <link>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85.html</link>
+      <pubDate>Sat, 22 Apr 2023 23:38:03 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85.html</guid>
+      <description>&lt;h3 id=&#34;记录一次manjaro中edb-debugger的安装&#34;&gt;记录一次manjaro中edb-debugger的安装&lt;/h3&gt;
+&lt;p&gt;在windows上，有ollydbg这个非常流行的调试工具，它仅支持32bit，x64dbg是它的替代品，开源且支持64位，在linux下，似乎并没有图形化界面的调试器，直到我遇见edb-debugger，官网并没有给出二进制，需要自己编译，git readme的编译方法我没试过。因为可以直接yay&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yay -S edb-debugger&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个脚本也是自己编译，大概10分钟左右，还是比较快的。装完之后打开提示出错。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85/2023-04-22-23-42-39-image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;网上找了一会儿，是路径没有配置对。把plugin的路径配置成如下图片上这种即可。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85/2023-04-22-23-44-00-image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;有的路径说是/usr/lib/edb，但是我并没有找到这个目录。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>记一次pacman的makepkg-本地二进制打包</title>
+      <link>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85.html</link>
+      <pubDate>Wed, 12 Apr 2023 20:44:57 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85.html</guid>
+      <description>&lt;h3 id=&#34;创建pkgbuild文件&#34;&gt;创建PKGBUILD文件&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pkgname=sendfile
+pkgver=1.1
+pkgrel=1
+arch=(&amp;#39;x86_64&amp;#39;)
+licence=(&amp;#39;MIT&amp;#39;)
+package(){
+    echo &amp;#39;helloworld&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;pkgrel相当于打包第几次？package是一个函数，打包时会运行这个
+运行 makepkg&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;makepkg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;目录会生成src,pkg目录，将我们的二进制文件，放在src里面去，我这里的二进制文件名字叫sendfile。打包会进入fakeroot环境，pkg目录就是root目录。因此，我们将src里面的文件移动到pkg目录就行了，移动的代码写在package函数里面。${pkgdir}就可以访问pkg目录，同理 $srcdir就可以访问src目录。代码如下：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pkgname=sendfile
+pkgver=1.1
+pkgrel=1
+arch=(&amp;#39;x86_64&amp;#39;)
+licence=(&amp;#39;MIT&amp;#39;)
+package(){
+    cd $srcdir
+    if [ ! -d &amp;#34;${pkgdir}/usr/bin&amp;#34; ]; then
+        mkdir -p &amp;#34;${pkgdir}/usr/bin&amp;#34;
+    fi    
+    install &amp;#34;sendfile&amp;#34; &amp;#34;${pkgdir}/usr/bin&amp;#34;
+    echo &amp;#34;finish&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后makepkg完成打包。最后会在当前目录生成一个zst文件，就是pacman的安装文件，使用```&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -U xxx.zst
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85/2023-04-14-11-43-47-image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打包之后，包文件里面会有一个BUILDINFO文件，里面包含pacman -Q所有输出，如果在乎隐私。可以这样重写write_buildinfo函数&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano ~/.config/pacman/makepkg.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; write_buildinfo&lt;span class=&#34;o&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    msg2 &lt;span class=&#34;s2&#34;&gt;&amp;#34;Don&amp;#39;t write .BUILDINFO&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>manjaro_install</title>
+      <link>http://localhost:1313/posts/2020/manjaro-install.html</link>
+      <pubDate>Tue, 21 Jul 2020 18:59:23 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2020/manjaro-install.html</guid>
+      <description>&lt;h1 id=&#34;manjaro-install&#34;&gt;manjaro-install&lt;/h1&gt;
+&lt;h2 id=&#34;设置国内源&#34;&gt;设置国内源&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;$sudo pacman-mirrors-i -c China -m rank&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;编辑archlinuxcn&#34;&gt;编辑archlinuxcn&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo nano /etc/pacman.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加以下代码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[archlinuxcn]Siglevel = Optional TrustedOnly
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或者这个&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[archlinuxcn]SigLevel = Optional TrustedOnly
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;导入密钥&#34;&gt;导入密钥&lt;/h3&gt;
+&lt;p&gt;先升级 &lt;code&gt;sudo pacman -Syy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;再导入密钥 &lt;code&gt;sudo pacman -S archlinuxcn-keyring&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;或者直接 &lt;code&gt;sudo pacman -Syy &amp;amp;&amp;amp; sudo pacman -S archlinuxcn-keyring&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;中文输入法&#34;&gt;中文输入法&lt;/h2&gt;
+&lt;h3 id=&#34;安装输入法&#34;&gt;安装输入法&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;配置输入法&#34;&gt;配置输入法&lt;/h4&gt;
+&lt;p&gt;编辑 &lt;code&gt;sudo nano /etc/enviroment&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在文件内写入三行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=&amp;#34;@im=fcitx&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重启生效&lt;/p&gt;
+&lt;h2 id=&#34;中文输入法二fcitx5&#34;&gt;中文输入法二，fcitx5&lt;/h2&gt;
+&lt;h4 id=&#34;卸载之前的fcitx&#34;&gt;卸载之前的fcitx&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;sudo pacman -Rc fcitx&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
