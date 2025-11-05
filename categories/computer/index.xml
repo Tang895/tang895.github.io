@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Computer on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/categories/computer.html</link>
+    <link>https://tang895.github.io/categories/computer.html</link>
     <description>Recent content in Computer on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 10 Jul 2022 13:42:49 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/computer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/categories/computer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>浅谈go二维数组的深复制</title>
-      <link>http://localhost:1313/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</link>
+      <link>https://tang895.github.io/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</link>
       <pubDate>Sun, 10 Jul 2022 13:42:49 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</guid>
       <description>&lt;h2 id=&#34;浅谈go二维数组的深复制&#34;&gt;浅谈go二维数组的深复制&lt;/h2&gt;
 &lt;p&gt;在go语言中，对于一个数组的赋值，和python一样，其实并没有开辟新空间,比如下面这行代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -70,9 +70,9 @@
     </item>
     <item>
       <title>各个终端设置代理的方法</title>
-      <link>http://localhost:1313/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
+      <link>https://tang895.github.io/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
       <pubDate>Fri, 08 Jul 2022 15:17:59 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
       <description>&lt;h3 id=&#34;端口以11223为例子&#34;&gt;端口以11223为例子&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cmd:   &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;http_proxy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://127.0.0.1:11223 &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;https_proxy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://127.0.0.1:11223
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -89,9 +89,9 @@
     </item>
     <item>
       <title>Python&#43;QT打包为单个exe的方法</title>
-      <link>http://localhost:1313/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
+      <link>https://tang895.github.io/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
       <pubDate>Fri, 08 Jul 2022 13:26:29 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
+      <guid>https://tang895.github.io/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
       <description>&lt;h2 id=&#34;python打包exe&#34;&gt;Python打包exe&lt;/h2&gt;
 &lt;p&gt;Python打包exe用pyinstaller，很简单，网上有很多教程，&lt;/p&gt;
 &lt;p&gt;对于python程序打包，使用的都是pyinstaller，以下为pyinstaller的一些用法。&lt;/p&gt;
@@ -105,9 +105,9 @@
     </item>
     <item>
       <title>manjaro_install</title>
-      <link>http://localhost:1313/posts/2020/manjaro-install.html</link>
+      <link>https://tang895.github.io/posts/2020/manjaro-install.html</link>
       <pubDate>Tue, 21 Jul 2020 18:59:23 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/manjaro-install.html</guid>
+      <guid>https://tang895.github.io/posts/2020/manjaro-install.html</guid>
       <description>&lt;h1 id=&#34;manjaro-install&#34;&gt;manjaro-install&lt;/h1&gt;
 &lt;h2 id=&#34;设置国内源&#34;&gt;设置国内源&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;$sudo pacman-mirrors-i -c China -m rank&lt;/code&gt;&lt;/p&gt;
@@ -139,9 +139,9 @@ export XMODIFIERS=&amp;#34;@im=fcitx&amp;#34;
     </item>
     <item>
       <title>解决origin下载慢问题</title>
-      <link>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
+      <link>https://tang895.github.io/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
       <pubDate>Mon, 20 Jul 2020 12:06:47 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
+      <guid>https://tang895.github.io/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
       <description>&lt;h2 id=&#34;解决origin下载慢问题&#34;&gt;解决origin下载慢问题&lt;/h2&gt;
 &lt;p&gt;最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。&lt;/p&gt;
 &lt;h2 id=&#34;usbeam_hosts_editor_v35&#34;&gt;UsbEAm_hosts_Editor_v3.5&lt;/h2&gt;
@@ -155,9 +155,9 @@ export XMODIFIERS=&amp;#34;@im=fcitx&amp;#34;
     </item>
     <item>
       <title>macdock</title>
-      <link>http://localhost:1313/posts/2020/macdock.html</link>
+      <link>https://tang895.github.io/posts/2020/macdock.html</link>
       <pubDate>Mon, 04 May 2020 13:25:16 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/macdock.html</guid>
+      <guid>https://tang895.github.io/posts/2020/macdock.html</guid>
       <description>&lt;h2 id=&#34;mac设置启动台图标大小&#34;&gt;Mac设置启动台图标大小&lt;/h2&gt;
 &lt;h3 id=&#34;效果&#34;&gt;效果&lt;/h3&gt;
 &lt;p&gt;&lt;img alt=&#34;avatar&#34; loading=&#34;lazy&#34; src=&#34;assets/macdock/macdock.jpg&#34;&gt;&lt;/p&gt;
@@ -182,9 +182,9 @@ killall Dock
     </item>
     <item>
       <title>如何求解n个数的最小公倍数</title>
-      <link>http://localhost:1313/posts/2020/thesma.html</link>
+      <link>https://tang895.github.io/posts/2020/thesma.html</link>
       <pubDate>Sun, 16 Feb 2020 12:16:05 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/thesma.html</guid>
+      <guid>https://tang895.github.io/posts/2020/thesma.html</guid>
       <description>&lt;h2 id=&#34;求解n个数字的最小公倍数&#34;&gt;求解n个数字的最小公倍数&lt;/h2&gt;
 &lt;p&gt;对于n个数字，可以先将这一串数字的初始值用数组存起来，然后复制一个数组。对于n个数字，每次找到最小的数，将最小的数字加上它的初始值，循环以上，直到所有的数字相等，就拿到了最小公倍数。&lt;/p&gt;
 &lt;h3 id=&#34;判断所有数字相等的方法&#34;&gt;判断所有数字相等的方法&lt;/h3&gt;
@@ -244,9 +244,9 @@ killall Dock
     </item>
     <item>
       <title>飞young电信校园网破解</title>
-      <link>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</link>
+      <link>https://tang895.github.io/posts/2019/dianxinxiaoyuanwang.html</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</guid>
+      <guid>https://tang895.github.io/posts/2019/dianxinxiaoyuanwang.html</guid>
       <description>&lt;h2 id=&#34;作者硬件非必需例如不用电脑也可以登录路由器管理界面只是电脑要好用一点&#34;&gt;作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;小米路由器4c&lt;/li&gt;
@@ -278,9 +278,9 @@ killall Dock
     </item>
     <item>
       <title>IOS描述文件分享</title>
-      <link>http://localhost:1313/posts/2019/ios13beta.html</link>
+      <link>https://tang895.github.io/posts/2019/ios13beta.html</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/ios13beta.html</guid>
+      <guid>https://tang895.github.io/posts/2019/ios13beta.html</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;本页面用于放一些ios描述文件&lt;/p&gt;
 &lt;h2 id=&#34;ios13升级beta版本&#34;&gt;IOS13升级beta版本&lt;/h2&gt;

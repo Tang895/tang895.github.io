@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Windows on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/tags/windows.html</link>
+    <link>https://tang895.github.io/tags/windows.html</link>
     <description>Recent content in Windows on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Tue, 20 Sep 2022 18:48:29 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Powershell的配置</title>
-      <link>http://localhost:1313/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</link>
+      <link>https://tang895.github.io/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</link>
       <pubDate>Tue, 20 Sep 2022 18:48:29 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</guid>
+      <guid>https://tang895.github.io/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</guid>
       <description>&lt;h2 id=&#34;powershell配置文件&#34;&gt;Powershell配置文件&lt;/h2&gt;
 &lt;p&gt;###第一步，安装Powershell
 在microsoft store 里面安装Powershell，不要用microsoft powershell，后者是电脑自带的。&lt;/p&gt;

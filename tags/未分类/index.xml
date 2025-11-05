@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>未分类 on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E7%B1%BB.html</link>
+    <link>https://tang895.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB.html</link>
     <description>Recent content in 未分类 on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 23 Apr 2023 15:45:11 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux-manjaro下最好用的词典软件</title>
-      <link>http://localhost:1313/posts/2023/linux-dictionary.html</link>
+      <link>https://tang895.github.io/posts/2023/linux-dictionary.html</link>
       <pubDate>Sun, 23 Apr 2023 15:45:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/linux-dictionary.html</guid>
+      <guid>https://tang895.github.io/posts/2023/linux-dictionary.html</guid>
       <description>&lt;h2 id=&#34;linux-manjaro下最好用的词典软件&#34;&gt;linux-manjaro下最好用的词典软件&lt;/h2&gt;
 &lt;p&gt;Linux下面有一个软件叫stardict，星际译王，在阅读pdf时，选中文字，就可以查询。但是在manjaro用起来会有很多问题。manjaro下，有一个代替的叫qstardict，可以直接pacman安装。打开软件什么都没有。&lt;/p&gt;
 &lt;p&gt;需要自己下载stardict的字典，首先需要设置stardict的字典路径：&lt;/p&gt;
@@ -30,9 +30,9 @@
     </item>
     <item>
       <title>大文件的优雅分享</title>
-      <link>http://localhost:1313/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</link>
+      <link>https://tang895.github.io/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</link>
       <pubDate>Thu, 22 Sep 2022 16:49:07 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</guid>
       <description>&lt;h2 id=&#34;大文件优雅分享&#34;&gt;大文件优雅分享&lt;/h2&gt;
 &lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;学校上网课的时候，或者平时上课，都会遇见老师要传文件给学生的情况，很多时候都是小文件，这时候用网盘、QQ等IM软件非常简单，但有些时候需要用到大文件的分享，尤其是虚拟机，文件大。
@@ -43,9 +43,9 @@ IM软件分享需要会员，速度也不快，网盘需要会员才能加速下
     </item>
     <item>
       <title>test</title>
-      <link>http://localhost:1313/posts/2022/test.html</link>
+      <link>https://tang895.github.io/posts/2022/test.html</link>
       <pubDate>Thu, 07 Jul 2022 22:26:21 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/test.html</guid>
+      <guid>https://tang895.github.io/posts/2022/test.html</guid>
       <description>&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;
 &lt;p&gt;yes,this is a test page&lt;/p&gt;</description>
     </item>

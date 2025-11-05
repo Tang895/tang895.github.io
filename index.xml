@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/index.html</link>
+    <link>https://tang895.github.io/index.html</link>
     <description>Recent content on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 02 Nov 2025 22:26:21 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一次hugo折腾过程</title>
-      <link>http://localhost:1313/posts/2025/%E4%B8%80%E6%AC%A1hugo%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B.html</link>
+      <link>https://tang895.github.io/posts/2025/%E4%B8%80%E6%AC%A1hugo%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B.html</link>
       <pubDate>Sun, 02 Nov 2025 22:26:21 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025/%E4%B8%80%E6%AC%A1hugo%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B.html</guid>
+      <guid>https://tang895.github.io/posts/2025/%E4%B8%80%E6%AC%A1hugo%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B.html</guid>
       <description>&lt;h2 id=&#34;打算换blog&#34;&gt;打算换blog&lt;/h2&gt;
 &lt;p&gt;使用hexo感觉有点麻烦，还要设置文章的图片，hexo搭建起来也比较费劲，尤其是ondejs 的安装也比较大，于是我换成了hugo,这是一个用go写的，部署起来很快，但是并不简单，这里面有很多坑！🤕&lt;/p&gt;
 &lt;h2 id=&#34;图片文件&#34;&gt;图片文件&lt;/h2&gt;
@@ -200,9 +200,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>记录一次manjaro设置休眠的过程</title>
-      <link>http://localhost:1313/posts/2023/manjaro-sleep.html</link>
+      <link>https://tang895.github.io/posts/2023/manjaro-sleep.html</link>
       <pubDate>Thu, 27 Apr 2023 00:12:29 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/manjaro-sleep.html</guid>
+      <guid>https://tang895.github.io/posts/2023/manjaro-sleep.html</guid>
       <description>&lt;h2 id=&#34;manjaro-休眠&#34;&gt;manjaro 休眠&lt;/h2&gt;
 &lt;p&gt;manjaro安装之后，默认没有交换空间，不能休眠。&lt;/p&gt;
 &lt;h3 id=&#34;设置交换空间&#34;&gt;设置交换空间&lt;/h3&gt;
@@ -237,9 +237,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>linux-manjaro下最好用的词典软件</title>
-      <link>http://localhost:1313/posts/2023/linux-dictionary.html</link>
+      <link>https://tang895.github.io/posts/2023/linux-dictionary.html</link>
       <pubDate>Sun, 23 Apr 2023 15:45:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/linux-dictionary.html</guid>
+      <guid>https://tang895.github.io/posts/2023/linux-dictionary.html</guid>
       <description>&lt;h2 id=&#34;linux-manjaro下最好用的词典软件&#34;&gt;linux-manjaro下最好用的词典软件&lt;/h2&gt;
 &lt;p&gt;Linux下面有一个软件叫stardict，星际译王，在阅读pdf时，选中文字，就可以查询。但是在manjaro用起来会有很多问题。manjaro下，有一个代替的叫qstardict，可以直接pacman安装。打开软件什么都没有。&lt;/p&gt;
 &lt;p&gt;需要自己下载stardict的字典，首先需要设置stardict的字典路径：&lt;/p&gt;
@@ -252,9 +252,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>linux-assembly-tutorial-att</title>
-      <link>http://localhost:1313/posts/2023/linux-assembly-tutorial-att.html</link>
+      <link>https://tang895.github.io/posts/2023/linux-assembly-tutorial-att.html</link>
       <pubDate>Sun, 23 Apr 2023 14:30:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/linux-assembly-tutorial-att.html</guid>
+      <guid>https://tang895.github.io/posts/2023/linux-assembly-tutorial-att.html</guid>
       <description>&lt;h3 id=&#34;linux汇编-笔记-att&#34;&gt;Linux汇编-笔记-AT&amp;amp;T&lt;/h3&gt;
 &lt;h4 id=&#34;打印hello-world&#34;&gt;打印Hello world&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nasm&#34; data-lang=&#34;nasm&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;.section&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;.rodata&lt;/span&gt;
@@ -291,9 +291,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>linux-assembly-tutorial-nasm</title>
-      <link>http://localhost:1313/posts/2023/linux-assembly-tutorial-nasm.html</link>
+      <link>https://tang895.github.io/posts/2023/linux-assembly-tutorial-nasm.html</link>
       <pubDate>Sun, 23 Apr 2023 14:30:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/linux-assembly-tutorial-nasm.html</guid>
+      <guid>https://tang895.github.io/posts/2023/linux-assembly-tutorial-nasm.html</guid>
       <description>&lt;h3 id=&#34;linux汇编-笔记-nasm&#34;&gt;Linux汇编-笔记-NASM&lt;/h3&gt;
 &lt;h4 id=&#34;打印hello-world&#34;&gt;打印Hello world&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nasm&#34; data-lang=&#34;nasm&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;section&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;.rodata&lt;/span&gt;
@@ -326,9 +326,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>记一次manjaro中edb-debugger的安装</title>
-      <link>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85.html</link>
+      <link>https://tang895.github.io/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85.html</link>
       <pubDate>Sat, 22 Apr 2023 23:38:03 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85.html</guid>
+      <guid>https://tang895.github.io/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1manjaro%E4%B8%ADedb-debugger%E7%9A%84%E5%AE%89%E8%A3%85.html</guid>
       <description>&lt;h3 id=&#34;记录一次manjaro中edb-debugger的安装&#34;&gt;记录一次manjaro中edb-debugger的安装&lt;/h3&gt;
 &lt;p&gt;在windows上，有ollydbg这个非常流行的调试工具，它仅支持32bit，x64dbg是它的替代品，开源且支持64位，在linux下，似乎并没有图形化界面的调试器，直到我遇见edb-debugger，官网并没有给出二进制，需要自己编译，git readme的编译方法我没试过。因为可以直接yay&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;yay -S edb-debugger&lt;/code&gt;&lt;/p&gt;
@@ -340,9 +340,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>git-notes</title>
-      <link>http://localhost:1313/posts/2023/git-notes.html</link>
+      <link>https://tang895.github.io/posts/2023/git-notes.html</link>
       <pubDate>Fri, 14 Apr 2023 13:19:31 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/git-notes.html</guid>
+      <guid>https://tang895.github.io/posts/2023/git-notes.html</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;添加公钥&lt;/p&gt;
@@ -369,9 +369,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>python解析json</title>
-      <link>http://localhost:1313/posts/2023/python%E8%A7%A3%E6%9E%90json.html</link>
+      <link>https://tang895.github.io/posts/2023/python%E8%A7%A3%E6%9E%90json.html</link>
       <pubDate>Fri, 14 Apr 2023 13:02:38 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/python%E8%A7%A3%E6%9E%90json.html</guid>
+      <guid>https://tang895.github.io/posts/2023/python%E8%A7%A3%E6%9E%90json.html</guid>
       <description>&lt;p&gt;json文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;json&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;jsonDict&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;loads&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;json文件路径&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
@@ -384,9 +384,9 @@ ${originalAttachmentFileName}
     </item>
     <item>
       <title>记一次pacman的makepkg-本地二进制打包</title>
-      <link>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85.html</link>
+      <link>https://tang895.github.io/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85.html</link>
       <pubDate>Wed, 12 Apr 2023 20:44:57 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85.html</guid>
+      <guid>https://tang895.github.io/posts/2023/%E8%AE%B0%E4%B8%80%E6%AC%A1pacman%E7%9A%84makepkg-%E6%9C%AC%E5%9C%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%93%E5%8C%85.html</guid>
       <description>&lt;h3 id=&#34;创建pkgbuild文件&#34;&gt;创建PKGBUILD文件&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pkgname=sendfile
 pkgver=1.1
@@ -426,9 +426,9 @@ package(){
     </item>
     <item>
       <title>大文件的优雅分享</title>
-      <link>http://localhost:1313/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</link>
+      <link>https://tang895.github.io/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</link>
       <pubDate>Thu, 22 Sep 2022 16:49:07 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E9%9B%85%E5%88%86%E4%BA%AB.html</guid>
       <description>&lt;h2 id=&#34;大文件优雅分享&#34;&gt;大文件优雅分享&lt;/h2&gt;
 &lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;学校上网课的时候，或者平时上课，都会遇见老师要传文件给学生的情况，很多时候都是小文件，这时候用网盘、QQ等IM软件非常简单，但有些时候需要用到大文件的分享，尤其是虚拟机，文件大。
@@ -439,9 +439,9 @@ IM软件分享需要会员，速度也不快，网盘需要会员才能加速下
     </item>
     <item>
       <title>Powershell的配置</title>
-      <link>http://localhost:1313/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</link>
+      <link>https://tang895.github.io/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</link>
       <pubDate>Tue, 20 Sep 2022 18:48:29 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</guid>
+      <guid>https://tang895.github.io/posts/2022/powershell%E7%9A%84%E9%85%8D%E7%BD%AE.html</guid>
       <description>&lt;h2 id=&#34;powershell配置文件&#34;&gt;Powershell配置文件&lt;/h2&gt;
 &lt;p&gt;###第一步，安装Powershell
 在microsoft store 里面安装Powershell，不要用microsoft powershell，后者是电脑自带的。&lt;/p&gt;
@@ -506,9 +506,9 @@ GitHub开源的编辑器，micro，他的快捷键都是Windows的标准，没�
     </item>
     <item>
       <title>浅谈go二维数组的深复制</title>
-      <link>http://localhost:1313/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</link>
+      <link>https://tang895.github.io/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</link>
       <pubDate>Sun, 10 Jul 2022 13:42:49 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E6%B5%85%E8%B0%88go%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E5%A4%8D%E5%88%B6.html</guid>
       <description>&lt;h2 id=&#34;浅谈go二维数组的深复制&#34;&gt;浅谈go二维数组的深复制&lt;/h2&gt;
 &lt;p&gt;在go语言中，对于一个数组的赋值，和python一样，其实并没有开辟新空间,比如下面这行代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -561,9 +561,9 @@ GitHub开源的编辑器，micro，他的快捷键都是Windows的标准，没�
     </item>
     <item>
       <title>各个终端设置代理的方法</title>
-      <link>http://localhost:1313/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
+      <link>https://tang895.github.io/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
       <pubDate>Fri, 08 Jul 2022 15:17:59 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
       <description>&lt;h3 id=&#34;端口以11223为例子&#34;&gt;端口以11223为例子&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cmd:   &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;http_proxy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://127.0.0.1:11223 &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;https_proxy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://127.0.0.1:11223
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -580,9 +580,9 @@ GitHub开源的编辑器，micro，他的快捷键都是Windows的标准，没�
     </item>
     <item>
       <title>Python&#43;QT打包为单个exe的方法</title>
-      <link>http://localhost:1313/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
+      <link>https://tang895.github.io/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
       <pubDate>Fri, 08 Jul 2022 13:26:29 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
+      <guid>https://tang895.github.io/posts/2022/python-qt%E6%89%93%E5%8C%85%E4%B8%BA%E5%8D%95%E4%B8%AAexe%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
       <description>&lt;h2 id=&#34;python打包exe&#34;&gt;Python打包exe&lt;/h2&gt;
 &lt;p&gt;Python打包exe用pyinstaller，很简单，网上有很多教程，&lt;/p&gt;
 &lt;p&gt;对于python程序打包，使用的都是pyinstaller，以下为pyinstaller的一些用法。&lt;/p&gt;
@@ -596,17 +596,17 @@ GitHub开源的编辑器，micro，他的快捷键都是Windows的标准，没�
     </item>
     <item>
       <title>test</title>
-      <link>http://localhost:1313/posts/2022/test.html</link>
+      <link>https://tang895.github.io/posts/2022/test.html</link>
       <pubDate>Thu, 07 Jul 2022 22:26:21 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/test.html</guid>
+      <guid>https://tang895.github.io/posts/2022/test.html</guid>
       <description>&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;
 &lt;p&gt;yes,this is a test page&lt;/p&gt;</description>
     </item>
     <item>
       <title>manjaro_install</title>
-      <link>http://localhost:1313/posts/2020/manjaro-install.html</link>
+      <link>https://tang895.github.io/posts/2020/manjaro-install.html</link>
       <pubDate>Tue, 21 Jul 2020 18:59:23 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/manjaro-install.html</guid>
+      <guid>https://tang895.github.io/posts/2020/manjaro-install.html</guid>
       <description>&lt;h1 id=&#34;manjaro-install&#34;&gt;manjaro-install&lt;/h1&gt;
 &lt;h2 id=&#34;设置国内源&#34;&gt;设置国内源&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;$sudo pacman-mirrors-i -c China -m rank&lt;/code&gt;&lt;/p&gt;
@@ -638,9 +638,9 @@ export XMODIFIERS=&amp;#34;@im=fcitx&amp;#34;
     </item>
     <item>
       <title>解决origin下载慢问题</title>
-      <link>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
+      <link>https://tang895.github.io/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
       <pubDate>Mon, 20 Jul 2020 12:06:47 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
+      <guid>https://tang895.github.io/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
       <description>&lt;h2 id=&#34;解决origin下载慢问题&#34;&gt;解决origin下载慢问题&lt;/h2&gt;
 &lt;p&gt;最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。&lt;/p&gt;
 &lt;h2 id=&#34;usbeam_hosts_editor_v35&#34;&gt;UsbEAm_hosts_Editor_v3.5&lt;/h2&gt;
@@ -654,9 +654,9 @@ export XMODIFIERS=&amp;#34;@im=fcitx&amp;#34;
     </item>
     <item>
       <title>短学期计划</title>
-      <link>http://localhost:1313/posts/2020/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92.html</link>
+      <link>https://tang895.github.io/posts/2020/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92.html</link>
       <pubDate>Sat, 20 Jun 2020 11:35:03 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92.html</guid>
+      <guid>https://tang895.github.io/posts/2020/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E8%AE%A1%E5%88%92.html</guid>
       <description>&lt;h2 id=&#34;计划&#34;&gt;计划&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;python基础学习&lt;/li&gt;
@@ -668,9 +668,9 @@ export XMODIFIERS=&amp;#34;@im=fcitx&amp;#34;
     </item>
     <item>
       <title>macdock</title>
-      <link>http://localhost:1313/posts/2020/macdock.html</link>
+      <link>https://tang895.github.io/posts/2020/macdock.html</link>
       <pubDate>Mon, 04 May 2020 13:25:16 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/macdock.html</guid>
+      <guid>https://tang895.github.io/posts/2020/macdock.html</guid>
       <description>&lt;h2 id=&#34;mac设置启动台图标大小&#34;&gt;Mac设置启动台图标大小&lt;/h2&gt;
 &lt;h3 id=&#34;效果&#34;&gt;效果&lt;/h3&gt;
 &lt;p&gt;&lt;img alt=&#34;avatar&#34; loading=&#34;lazy&#34; src=&#34;assets/macdock/macdock.jpg&#34;&gt;&lt;/p&gt;
@@ -695,9 +695,9 @@ killall Dock
     </item>
     <item>
       <title>最大化</title>
-      <link>http://localhost:1313/posts/2020/%E6%9C%80%E5%A4%A7%E5%8C%96.html</link>
+      <link>https://tang895.github.io/posts/2020/%E6%9C%80%E5%A4%A7%E5%8C%96.html</link>
       <pubDate>Fri, 01 May 2020 16:45:05 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/%E6%9C%80%E5%A4%A7%E5%8C%96.html</guid>
+      <guid>https://tang895.github.io/posts/2020/%E6%9C%80%E5%A4%A7%E5%8C%96.html</guid>
       <description>&lt;h2 id=&#34;闻&#34;&gt;闻&lt;/h2&gt;
 &lt;p&gt;虚伪的文字我都不会写&lt;/p&gt;
 &lt;p&gt;赞颂的诗歌你都不会看&lt;/p&gt;
@@ -745,9 +745,9 @@ killall Dock
     </item>
     <item>
       <title>如何求解n个数的最小公倍数</title>
-      <link>http://localhost:1313/posts/2020/thesma.html</link>
+      <link>https://tang895.github.io/posts/2020/thesma.html</link>
       <pubDate>Sun, 16 Feb 2020 12:16:05 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/thesma.html</guid>
+      <guid>https://tang895.github.io/posts/2020/thesma.html</guid>
       <description>&lt;h2 id=&#34;求解n个数字的最小公倍数&#34;&gt;求解n个数字的最小公倍数&lt;/h2&gt;
 &lt;p&gt;对于n个数字，可以先将这一串数字的初始值用数组存起来，然后复制一个数组。对于n个数字，每次找到最小的数，将最小的数字加上它的初始值，循环以上，直到所有的数字相等，就拿到了最小公倍数。&lt;/p&gt;
 &lt;h3 id=&#34;判断所有数字相等的方法&#34;&gt;判断所有数字相等的方法&lt;/h3&gt;
@@ -807,9 +807,9 @@ killall Dock
     </item>
     <item>
       <title>飞young电信校园网破解</title>
-      <link>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</link>
+      <link>https://tang895.github.io/posts/2019/dianxinxiaoyuanwang.html</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</guid>
+      <guid>https://tang895.github.io/posts/2019/dianxinxiaoyuanwang.html</guid>
       <description>&lt;h2 id=&#34;作者硬件非必需例如不用电脑也可以登录路由器管理界面只是电脑要好用一点&#34;&gt;作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;小米路由器4c&lt;/li&gt;
@@ -841,9 +841,9 @@ killall Dock
     </item>
     <item>
       <title>IOS描述文件分享</title>
-      <link>http://localhost:1313/posts/2019/ios13beta.html</link>
+      <link>https://tang895.github.io/posts/2019/ios13beta.html</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/ios13beta.html</guid>
+      <guid>https://tang895.github.io/posts/2019/ios13beta.html</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;本页面用于放一些ios描述文件&lt;/p&gt;
 &lt;h2 id=&#34;ios13升级beta版本&#34;&gt;IOS13升级beta版本&lt;/h2&gt;
@@ -852,9 +852,9 @@ killall Dock
     </item>
     <item>
       <title>Hello World</title>
-      <link>http://localhost:1313/posts/2019/hello-world.html</link>
+      <link>https://tang895.github.io/posts/2019/hello-world.html</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/hello-world.html</guid>
+      <guid>https://tang895.github.io/posts/2019/hello-world.html</guid>
       <description>&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;Quick Start&lt;/h2&gt;
 &lt;h3 id=&#34;create-a-new-post&#34;&gt;Create a new post&lt;/h3&gt;

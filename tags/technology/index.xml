@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Technology on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/tags/technology.html</link>
+    <link>https://tang895.github.io/tags/technology.html</link>
     <description>Recent content in Technology on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Mon, 20 Jul 2020 12:06:47 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/tags/technology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决origin下载慢问题</title>
-      <link>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
+      <link>https://tang895.github.io/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</link>
       <pubDate>Mon, 20 Jul 2020 12:06:47 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
+      <guid>https://tang895.github.io/posts/2020/%E8%A7%A3%E5%86%B3origin%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98.html</guid>
       <description>&lt;h2 id=&#34;解决origin下载慢问题&#34;&gt;解决origin下载慢问题&lt;/h2&gt;
 &lt;p&gt;最简单的方法是开加速器，但是加速器的速度会有限速；其次简单的方法是直接挂代理，对大部分人来说也是最难的方法；有些人会在网上去找hosts的更改方法，麻烦不说，找到的ip不一定是最适合自己的。有一个软件可以直接更改hosts文件，可以列出ip列表并测延迟，而不用到处找ip。&lt;/p&gt;
 &lt;h2 id=&#34;usbeam_hosts_editor_v35&#34;&gt;UsbEAm_hosts_Editor_v3.5&lt;/h2&gt;
@@ -31,9 +31,9 @@
     </item>
     <item>
       <title>飞young电信校园网破解</title>
-      <link>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</link>
+      <link>https://tang895.github.io/posts/2019/dianxinxiaoyuanwang.html</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/dianxinxiaoyuanwang.html</guid>
+      <guid>https://tang895.github.io/posts/2019/dianxinxiaoyuanwang.html</guid>
       <description>&lt;h2 id=&#34;作者硬件非必需例如不用电脑也可以登录路由器管理界面只是电脑要好用一点&#34;&gt;作者硬件(非必需，例如不用电脑也可以登录路由器管理界面，只是电脑要好用一点)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;小米路由器4c&lt;/li&gt;
@@ -65,9 +65,9 @@
     </item>
     <item>
       <title>IOS描述文件分享</title>
-      <link>http://localhost:1313/posts/2019/ios13beta.html</link>
+      <link>https://tang895.github.io/posts/2019/ios13beta.html</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2019/ios13beta.html</guid>
+      <guid>https://tang895.github.io/posts/2019/ios13beta.html</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;本页面用于放一些ios描述文件&lt;/p&gt;
 &lt;h2 id=&#34;ios13升级beta版本&#34;&gt;IOS13升级beta版本&lt;/h2&gt;

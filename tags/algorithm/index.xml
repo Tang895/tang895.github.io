@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Algorithm on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/tags/algorithm.html</link>
+    <link>https://tang895.github.io/tags/algorithm.html</link>
     <description>Recent content in Algorithm on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Feb 2020 12:16:05 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何求解n个数的最小公倍数</title>
-      <link>http://localhost:1313/posts/2020/thesma.html</link>
+      <link>https://tang895.github.io/posts/2020/thesma.html</link>
       <pubDate>Sun, 16 Feb 2020 12:16:05 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/thesma.html</guid>
+      <guid>https://tang895.github.io/posts/2020/thesma.html</guid>
       <description>&lt;h2 id=&#34;求解n个数字的最小公倍数&#34;&gt;求解n个数字的最小公倍数&lt;/h2&gt;
 &lt;p&gt;对于n个数字，可以先将这一串数字的初始值用数组存起来，然后复制一个数组。对于n个数字，每次找到最小的数，将最小的数字加上它的初始值，循环以上，直到所有的数字相等，就拿到了最小公倍数。&lt;/p&gt;
 &lt;h3 id=&#34;判断所有数字相等的方法&#34;&gt;判断所有数字相等的方法&lt;/h3&gt;

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Proxy on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/tags/proxy.html</link>
+    <link>https://tang895.github.io/tags/proxy.html</link>
     <description>Recent content in Proxy on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Jul 2022 15:17:59 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>各个终端设置代理的方法</title>
-      <link>http://localhost:1313/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
+      <link>https://tang895.github.io/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</link>
       <pubDate>Fri, 08 Jul 2022 15:17:59 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
+      <guid>https://tang895.github.io/posts/2022/%E5%90%84%E4%B8%AA%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
       <description>&lt;h3 id=&#34;端口以11223为例子&#34;&gt;端口以11223为例子&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cmd:   &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;http_proxy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://127.0.0.1:11223 &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;https_proxy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://127.0.0.1:11223
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;

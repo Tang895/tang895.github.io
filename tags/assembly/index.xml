@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Assembly on TangYijun&#39;s Blog</title>
-    <link>http://localhost:1313/tags/assembly.html</link>
+    <link>https://tang895.github.io/tags/assembly.html</link>
     <description>Recent content in Assembly on TangYijun&#39;s Blog</description>
     <image>
       <title>TangYijun&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tang895.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 23 Apr 2023 14:30:11 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tang895.github.io/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux-assembly-tutorial-att</title>
-      <link>http://localhost:1313/posts/2023/linux-assembly-tutorial-att.html</link>
+      <link>https://tang895.github.io/posts/2023/linux-assembly-tutorial-att.html</link>
       <pubDate>Sun, 23 Apr 2023 14:30:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/linux-assembly-tutorial-att.html</guid>
+      <guid>https://tang895.github.io/posts/2023/linux-assembly-tutorial-att.html</guid>
       <description>&lt;h3 id=&#34;linux汇编-笔记-att&#34;&gt;Linux汇编-笔记-AT&amp;amp;T&lt;/h3&gt;
 &lt;h4 id=&#34;打印hello-world&#34;&gt;打印Hello world&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nasm&#34; data-lang=&#34;nasm&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;.section&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;.rodata&lt;/span&gt;
@@ -54,9 +54,9 @@
     </item>
     <item>
       <title>linux-assembly-tutorial-nasm</title>
-      <link>http://localhost:1313/posts/2023/linux-assembly-tutorial-nasm.html</link>
+      <link>https://tang895.github.io/posts/2023/linux-assembly-tutorial-nasm.html</link>
       <pubDate>Sun, 23 Apr 2023 14:30:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/linux-assembly-tutorial-nasm.html</guid>
+      <guid>https://tang895.github.io/posts/2023/linux-assembly-tutorial-nasm.html</guid>
       <description>&lt;h3 id=&#34;linux汇编-笔记-nasm&#34;&gt;Linux汇编-笔记-NASM&lt;/h3&gt;
 &lt;h4 id=&#34;打印hello-world&#34;&gt;打印Hello world&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nasm&#34; data-lang=&#34;nasm&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;section&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;.rodata&lt;/span&gt;
