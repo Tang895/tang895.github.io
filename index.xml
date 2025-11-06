@@ -31,8 +31,8 @@ ${originalAttachmentFileName}
 
 # markdown url
 ./assets/${noteFileName}/${originalAttachmentFileName}.${originalAttachmentFileExtension}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;assets/%E4%B8%80%E6%AC%A1hugo%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B/Pasted%20image%2020251103134935.png&#34;&gt;
-的图片文件，只能一个一个去改。改了之后还有坑，它不支持图片的相对路径，在网上找了解决方案，就是在yaml配置文件里面加一个参数就好了。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./assets/%E4%B8%80%E6%AC%A1hugo%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B/Pasted%20image%2020251103134935.png&#34;&gt;
+hugo的图片文件，只能一个一个去改。改了之后还有坑，它不支持图片的相对路径，在网上找了解决方案，就是在yaml配置文件里面加一个参数就好了。&lt;/p&gt;
 &lt;h2 id=&#34;然后就是hugo本身的问题&#34;&gt;然后就是hugo本身的问题&lt;/h2&gt;
 &lt;p&gt;我是选了一个名字叫&lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod/&#34;&gt;PaperMod&lt;/a&gt;的主题，主要就是hugo.toml这个文件的配置，生成博客之后，这个文件是空的，但是这个文件里面其实有很多需要自己配置的，否则博客有很多问题，这里我参考了主题给的demo yaml，另外在网上找了几个参数解决如下几个问题：&lt;/p&gt;
 &lt;ul&gt;
