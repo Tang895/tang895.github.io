@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS Selector Demo</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .box {
+        border: 1px solid #ccc;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .active {
+        background: #e6f7ff;
+    }
+</style>
+</head>
+
+<body>
+
+<h1 id="title">CSS Selector 测试页面</h1>
+
+<!-- ID / Class -->
+<div id="userForm" class="box">
+    <h2>用户表单</h2>
+
+    <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="用户名">
+
+    <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="密码">
+
+    <button id="loginBtn" class="btn primary">
+        登录
+    </button>
+
+    <button class="btn secondary">
+        注册
+    </button>
+</div>
+
+<!-- 多 Class -->
+<div class="box">
+    <h2>卡片区域</h2>
+
+    <div class="card active">
+        激活卡片
+    </div>
+
+    <div class="card">
+        普通卡片
+    </div>
+</div>
+
+<!-- 后代与子元素 -->
+<div class="box container">
+
+    <h2>层级结构</h2>
+
+    <button class="top-btn">
+        顶层按钮
+    </button>
+
+    <div class="wrapper">
+
+        <button class="inner-btn">
+            内层按钮
+        </button>
+
+        <div>
+
+            <button class="deep-btn">
+                更深层按钮
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 属性选择器 -->
+<div class="box">
+
+    <h2>属性选择器</h2>
+
+    <input data-role="admin" value="管理员">
+
+    <input data-role="user" value="普通用户">
+
+    <input data-role="super-admin" value="超级管理员">
+
+</div>
+
+<!-- nth-child -->
+<div class="box">
+
+    <h2>用户列表</h2>
+
+    <ul id="userList">
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+        <li>赵六</li>
+        <li>孙七</li>
+    </ul>
+
+</div>
+
+<!-- 兄弟选择器 -->
+<div class="box">
+
+    <h2>兄弟元素</h2>
+
+    <div id="firstDiv">
+        第一个 DIV
+    </div>
+
+    <p>第一个 P</p>
+
+    <p>第二个 P</p>
+
+    <p>第三个 P</p>
+
+</div>
+
+</body>
+</html>
